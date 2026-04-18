@@ -1,0 +1,19 @@
+python 3.11.8
+//python get-pip.py
+pip-26.0.1-py3-none-any.whl (1.8 MB)
+wheel-0.46.3-py3-none-any.whl (30 kB)
+packaging-26.1-py3-none-any.whl (95 kB)
+
+cd C:\offline-packages
+python -m pip install --no-index --find-links=. pip setuptools wheel
+
+
+pip install opencv-python mediapipe numpy
+
+py -m pip download mediapipe == 0.10.11 -d mp
+
+pip download mediapipe opencv-python numpy -d pyinstaller
+pip install --no-index --find-links=pyinstaller mediapipe
+
+pip install pyinstaller
+pyinstaller --onefile main.py
