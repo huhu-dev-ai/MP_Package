@@ -1,0 +1,3 @@
+﻿Aplikacja NVIDIA App zapewnia zunifikowane centrum sterowania procesorem graficznym karty graficznej NVIDIA. To najprostszy sposób, aby zapewnić najnowsze sterowniki i technologie NVIDIA na komputerze. Zapewnia łatwy dostęp do specjalnych aplikacji NVIDIA, zunifikowanego centrum sterowania procesorem graficznym i zaawansowanych narzędzi do nagrywania, dostępnych z poziomu nakładki w grze.
+
+Instalacja pozwala zaktualizować aplikację GeForce Experience do aplikacji NVIDIA App i przenieść preferowane ustawienia.

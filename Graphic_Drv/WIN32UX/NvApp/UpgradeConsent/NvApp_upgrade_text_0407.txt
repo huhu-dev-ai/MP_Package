@@ -1,0 +1,3 @@
+﻿Die NVIDIA App bietet ein vereinheitlichtes GPU-Kontrollzentrum für Ihre NVIDIA-Grafikkarte. Mit den neuen NVIDIA-Treibern und Technologien ist es am leichtesten, Ihren PC auf dem neuesten Stand zu halten. Sie bieten einen leichten Zugang zu exklusiven NVIDIA-Anwendungen, einem vereinheitlichten GPU-Kontrollzentrum und einem leistungsstarken Aufnahmetool, das von einem spielinternen Overlay verfügbar ist.
+
+Die Installation aktualisiert die GeForce Experience in der NVIDIA App und überträgt Ihre Präferenzen.

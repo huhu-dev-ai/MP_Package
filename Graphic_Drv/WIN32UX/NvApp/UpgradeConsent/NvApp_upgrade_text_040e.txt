@@ -1,0 +1,3 @@
+﻿Az NVIDIA App egy egységes GPU-vezérlőközpontot biztosít az NVIDIA grafikus kártyához. Ez a legegyszerűbb módja annak, hogy számítógépén mindig a legújabb NVIDIA illesztőprogram és technológia fusson. Segítségével könnyedén hozzáférhet az exkluzív NVIDIA alkalmazásokhoz, egy egységes GPU-vezérlőközponthoz, valamint hatékony rögzítőeszközökhöz, melyek egy játékon belüli felületről érhetők el.
+
+A telepítés a GeForce Experience-t az NVIDIA Appra frissíti, és megőrzi az Ön beállításait.

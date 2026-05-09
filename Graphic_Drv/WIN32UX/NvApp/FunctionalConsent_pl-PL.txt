@@ -1,0 +1,5 @@
+﻿Aplikacja NVIDIA App wykorzystuje dane systemowe, aby skonfigurować ustawienia karty graficznej i aplikacji w celu zapewnienia najlepszych wrażeń podczas grania, tworzenia treści i projektowania. Firma korzysta z konfiguracji sprzętu i oprogramowania komputera, zainstalowanych gier i aplikacji kreatywnych/projektowych, ustawień gier i aplikacji oraz danych dotyczących wydajności, wskaźników użycia aplikacji NVIDIA App i regionu geograficznego. 
+
+Dane te są wykorzystywane w celu optymalizacji ustawień aplikacji, dostarczania aktualizacji oprogramowania i zawartości, ulepszania funkcji aplikacji, realizowania kodów do bezpłatnych gier i przestrzegania lokalnych przepisów dotyczących prywatności.
+
+W Polityce prywatności Firmy wyjaśniono, jakie dane Firma zbiera i co z nimi robi.  Opcje prywatności można skonfigurować samodzielnie w menu Ustawienia aplikacji NVIDIA App.

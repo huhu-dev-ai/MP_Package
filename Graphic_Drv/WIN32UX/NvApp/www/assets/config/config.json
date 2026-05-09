@@ -1,0 +1,274 @@
+{
+  "build": {
+    "version": "11.0.6.383",
+    "type": "prod",
+    "branch": "",
+    "hash": "",
+    "variant": ""
+  },
+  "appName": "nvapp",
+  "gfwsl": {
+    "server": "https://gfwsl.geforce.com/",
+    "userAgent": "NVIDIAGFEClient",
+    "defaultRetries": "0",
+    "defaultTimeBetweenRetries": "0",
+    "defaultTimeout": "30000",
+    "includedParams": {
+      "additionalHwInfo": true,
+      "geo": true
+    },
+    "cacheRefreshTime": 43200000
+  },
+  "vrs": {
+    "server": "",
+    "portNumbers": [
+      2259,
+      6460,
+      4358,
+      9096,
+      8090
+    ],
+    "defaultRetries": 1,
+    "defaultTimeout": 17000,
+    "retryOnTimeout": false,
+    "exponentialBackoffMaxDelay": 30000
+  },
+  "starfleet": {
+    "platformType": "Cef",
+    "url": "",
+    "logoutUrl": "https://static-login.nvidia.com/service/default/noir/logout",
+    "keyValueServiceUrl": "https://userstore.nvidia.com/v1",
+    "clientId": "",
+    "scope": "openid consent tk_client email",
+    "redirectUrl": "http://localhost:{portnumber}",
+    "portNumbers": [
+      2259,
+      6460,
+      4358,
+      9096,
+      8090,
+      6545,
+      2259,
+      7119,
+      3287,
+      5639,
+      8870
+    ],
+    "onCompleteRedirectUrl": "https://static-login.nvidia.com/service/default/noir/result",
+    "redirectParams": [
+      "error"
+    ],
+    "httpServerDuration": 1800000,
+    "clientTokenRefreshDuration": 2332800000,
+    "clientTokenRefreshDurationInPercentage": 30,
+    "useDeviceAuthLogin": false,
+    "useAuthorizationCodeFlow": true,
+    "sameTabLogin": false,
+    "idTokenRefreshUnderDuration": 60000,
+    "useNvAccountForUserConsent": true,
+    "storageType": "indexedDB",
+    "jarvisIdpId": "PDiAhv2kJTFeQ7WOPqiQ2tRZ7lGhR2X11dXvM4TZSxg"
+  },
+  "lcars": {
+    "serverUrl": "",
+    "serverUrlCDN": "https://public.games.geforce.com/graphql",
+    "clientId": "7dafbd1e-7e0d-45ff-9b81-2e10b2066abf",
+    "defaultRetries": 1,
+    "defaultTimeout": 17000,
+    "retryOnTimeout": true,
+    "exponentialBackoffMaxDelay": 30000,
+    "appsRefreshTime": 43200000,
+    "defaultVersion": "0.0.0.0"
+  },
+  "redirect": {
+    "serverUrl": "",
+    "defaultLocale": ""
+  },
+  "driver": {
+    "allowInstallCheckErrorDetailsLink": "https://nvidia.custhelp.com/app/answers/detail/a_id/3814",
+    "driverDownloadPage": "https://www.nvidia.com/download/index.aspx"
+  },
+  "gfservices": {
+    "server": "https://ops-gx.nvidia.com/",
+    "version": "v3",
+    "defaultRetries": "0",
+    "defaultTimeBetweenRetries": "0",
+    "defaultTimeout": "30000"
+  },
+  "otelTracerConfig": {
+    "exportConfig": {
+      "accessToken": "EEdnetVL0JJ5Wt2/hZor1SAIprMQ926Zyyh3fCATtlc8ZDzAx7EE/fsS93UhoPWXQgsorfkTApfopEuLYbQ=",
+      "collectorUrl": "https://prod.otel.kaizen.nvidia.com/traces/otlp/v0.9",
+      "componentName": "nvapp-prod"
+    },
+    "apiTracingConfig": {
+      "urlRegex": [
+        "https://events.(gfestage|gfe|gx).nvidia.(com|cn)",
+        "https://(stg.login|login).nvidia.(com|cn)",
+        "https://gx-target-(experiments|survey|rconfig)-frontend-api.gx.nvidia.(com|cn)",
+        "https://(public.games|staging.games|games).geforce.com"
+      ]
+    }
+  },
+  "statusCodeZeroAnalyzerConfig": {
+    "dnsCacheValidity": 3600000
+  },
+  "featureEnablement": {
+    "consoleLogging": {
+      "enabled": true
+    },
+    "remoteLogging": {
+      "enabled": false
+    },
+    "nvSearch": {
+      "enabled": false
+    },
+    "actionCards": {
+      "enabled": true,
+      "graphicsSettings": {
+        "enabled": true
+      },
+      "rewards": {
+        "enabled": true
+      }
+    },
+    "programSettings": {
+      "enabled": true
+    },
+    "ootb": {
+      "enabled": true
+    },
+    "logininfo": {
+      "enabled": true
+    },
+    "ops": {
+      "enabled": true
+    },
+    "previouslyInstalledDrivers": {
+      "enabled": true
+    },
+    "workstation": {
+      "enabled": true,
+      "personas": {
+        "enabled": true
+      }
+    },
+    "gAssist": {
+      "enabled": true
+    },
+    "surround": {
+      "enabled": true
+    },
+    "optimus": {
+      "enabled": false
+    }
+  },
+  "jsEvents": {
+    "server": "",
+    "version": "v1.0",
+    "schemaVersion": "7.0",
+    "defaultRetries": 2,
+    "defaultTimeBetweenRetries": 1000,
+    "defaultTimeout": 30000,
+    "msBetweenSendRequest": 5000,
+    "maxEventsPerRequest": 128,
+    "clientId": "37592259939409600",
+    "systemInfoEventDelay": 10000,
+    "productName": "NvApp"
+  },
+  "survey": {
+    "server": "",
+    "containerBaseUrl": "",
+    "defaultRetries": 2,
+    "defaultTimeBetweenRetries": 2000,
+    "defaultTimeout": 30000,
+    "clientId": "37592259939409600"
+  },
+  "cloudVariables": {
+    "server": "",
+    "featureRolloutAPIVersion": "v3",
+    "defaultRetries": 2,
+    "defaultTimeout": 30000,
+    "defaultTimeBetweenRetries": 2000,
+    "networkTimeoutForCacheFallback": 500,
+    "allCvNetworkTimeoutForCacheFallback": 2000,
+    "cacheMaxAge": 1440,
+    "clientId": "37592259939409600",
+    "experiences": {
+      "nvappFeatureToggle": "appRemoteConfig"
+    },
+    "denyListExperiences": [],
+    "deviceIdActivatedExperiences": []
+  },
+  "aem": {
+    "server": "",
+    "defaultRetries": 0,
+    "defaultTimeBetweenRetries": 0,
+    "defaultTimeout": 30000
+  },
+  "exception": {
+    "exceptionTimeLimiter": 60000,
+    "clientName": "NvAppClient ",
+    "isExceptionEnabled": true,
+    "devMode": false
+  },
+  "nvAccount": {
+    "consentRefreshPeriodSeconds": 86400,
+    "telemetryClientIds": [
+      "37592259939409600",
+      "45706024761384475",
+      "40715460351432177",
+      "90705384256131517",
+      "27374659873456987",
+      "72385204517992235",
+      "12546161697959406",
+      "44951455890061760",
+      "22562802798123727",
+      "39015107060299402",
+      "95110488246328146",
+      "51462192262044226"
+    ]
+  },
+  "nvLocalizedConfig": {
+    "project": "Localized-Config-NVApp",
+    "client": "NVApp",
+    "localizationServiceUrl": "https://localized-config-api.gx.nvidia.com/v1",
+    "validityDurationSeconds": 86400
+  },
+  "ops": {
+    "updateCheckFrequency": 24,
+    "focusUIFrequency": 86400000
+  },
+  "previouslyInstalledDriversConfig": {
+    "maxDisplayCount": {
+      "default": 1,
+      "quadro": 1
+    }
+  },
+  "optionalPluginTimeout": 600000,
+  "nvDriverDiagnostics": {
+    "driverTelemetryNotificationTimeoutSeconds": 86400,
+    "cloudVariablesRefreshPeriodSeconds": 86400,
+    "controlVariable": "driverConsentPrompt",
+    "dialogEnabled": true
+  },
+  "searchConfig": {
+    "searchDebounceTime": 400,
+    "lazySearch": {
+      "enabled": false
+    },
+    "preSpinnerWaitDuration": 500
+  },
+  "scan": {
+    "triggerOnSelfUpdate": true
+  },
+  "ahlCloudSync": {
+    "serverUrl": "https://release.nv-ahl.nvidia.com/"
+  },
+  "marqueeAggregationWaitTime": 3600000,
+  "networkHttpEndpointRetryConfig": {
+    "exponentialBackoffFirstRetryInterval": 1000,
+    "exponentGrowthFactor": 1
+  },
+  "minimumOfflineToOnlineRefreshInterval": 300000
+}

@@ -1,0 +1,249 @@
+{
+  "nv-nvtelemetry-config-path": "%ProgramFiles%/NVIDIA Corporation/NvTelemetry/plugin/NvTelemetry.json",
+  "nv-nvtelemetry-binaries-path": "%ProgramFiles%/NVIDIA Corporation/NvTelemetry",
+  "diagnosticsData-path": "%LocalAppData%/NVIDIA Corporation/NVIDIA App/Diagnostics",
+  "singleInstance": "{9AE297E4-E7B3-492B-9C1F-BCCD4B9537AB}",
+  "crashInfo": {
+    "crashDumpDirectories": [
+      "%localappdata%/CrashDumps",
+      "%programdata%/NVIDIA Corporation/CrashDumps"
+    ],
+    "crashDumpNamePattern": [
+      "nvidia app",
+      "nvidia overlay",
+      "oawrapper",
+      "nvoawrappercache",
+      "nvsphelper64",
+      "nvdliswrapper",
+      "nvcontainer"
+    ],
+    "applogsInfo": [
+      {
+        "mimeInfo": "file/log",
+        "filePath": [
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalUser.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalUser.1.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_NVIDIA App.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_NVIDIA App.1.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/debug.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/console.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate_admin.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/overrides.json",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/debug.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/console.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate_admin.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/backend.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/backend.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/ApplicationStorage.json",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/SHIM.json",
+          "%ProgramData%/NVIDIA Corporation/NvTelemetry/NvTelemetry.log",
+          "%ProgramData%/NVIDIA Corporation/NvTelemetry/NvTelemetry.log.bak",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalSystem.log",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalSystem.1.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/UXD/Log.NVIDIA App.exe.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/UXD/Log.NVIDIA App.exe.log1",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UXD/Log.nvcontainer.exe.log",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UXD/Log.nvcontainer.exe.log1",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/console.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/console.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/CxNative_NVIDIA Overlay.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/CxNative_NVIDIA Overlay.1.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/debug.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/debug.log.bak",
+          "%LocalAppData/NVIDIA Corporation/FrameViewSDK/nvrla.log",
+          "%ProgramData%/NVIDIA Corporation/ShadowPlay/CaptureCore.log",
+          "%ProgramData%/NVIDIA Corporation/ShadowPlay/CaptureCore.old",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/G-Assist/VoiceQuery.log",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/G-Assist/GameAssist.log"
+        ],
+        "dirPath": [
+          "%LocalAppData%/NVIDIA Corporation/GfeSDK",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/Installer/Logs",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/profile-catalog",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/registry",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/status",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/MessageBus",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/NvContainer"
+        ],
+        "includeList": [
+          ".log",
+          ".bak",
+          ".log_backup",
+          ".log_backup1",
+          ".json"
+        ]
+      }
+    ]
+  },
+  "exceptionInfo": [
+    {
+      "componentName": [
+        "NVAPP_UI"
+      ],
+      "applogsInfo": [
+        {
+          "mimeInfo": "file/log",
+          "filePath": [
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalUser.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalUser.1.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_NVIDIA App.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_NVIDIA App.1.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/debug.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/console.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate_admin.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/overrides.json",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/debug.log.bak",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/console.log.bak",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate.log.bak",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate_admin.log.bak",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/backend.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/backend.log.bak",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/ApplicationStorage.json",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/SHIM.json",
+            "%ProgramData%/NVIDIA Corporation/NvTelemetry/NvTelemetry.log",
+            "%ProgramData%/NVIDIA Corporation/NvTelemetry/NvTelemetry.log.bak",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalSystem.log",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalSystem.1.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/UXD/Log.NVIDIA App.exe.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/UXD/Log.NVIDIA App.exe.log1",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/UXD/Log.nvcontainer.exe.log",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/UXD/Log.nvcontainer.exe.log1"
+          ],
+          "dirPath": [
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/Installer/Logs",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/profile-catalog",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/registry",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/status",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/MessageBus",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/NvContainer",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/SessionLogs"
+          ],
+          "includeList": [
+            ".log",
+            ".json",
+            ".bak",
+            ".log_backup",
+            ".log_backup1"
+          ]
+        }
+      ]
+    },
+    {
+      "componentName": [
+        "NVAPP_OSC_UI"
+      ],
+      "applogsInfo": [
+        {
+          "mimeInfo": "file/log",
+          "filePath": [
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/console.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/console.log.bak",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/CxNative_NVIDIA Overlay.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/CxNative_NVIDIA Overlay.1.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/debug.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/debug.log.bak",
+            "%LocalAppData/NVIDIA Corporation/FrameViewSDK/nvrla.log",
+            "%ProgramData%/NVIDIA Corporation/ShadowPlay/CaptureCore.log",
+            "%ProgramData%/NVIDIA Corporation/ShadowPlay/CaptureCore.old",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/backend.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/backend.log.bak",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/ApplicationStorage.json",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/SHIM.json"
+          ],
+          "dirPath": [
+            "%LocalAppData%/NVIDIA Corporation/GfeSDK"
+          ],
+          "includeList": [
+            ".log"
+          ]
+        }
+      ]
+    },
+    {
+      "componentName": [
+        "UpdateFramework"
+      ],
+      "applogsInfo": [
+        {
+          "mimeInfo": "file/log",
+          "filePath": [
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalUser.1.log",
+            "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalUser.log"
+          ],
+          "dirPath": [
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/profile-catalog",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/registry",
+            "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/status"
+          ],
+          "includeList": [
+            ".json"
+          ]
+        }
+      ]
+    }
+  ],
+  "userFeedbackInfo": {
+    "applogsInfo": [
+      {
+        "mimeInfo": "file/log",
+        "filePath": [
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalUser.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalUser.1.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_NVIDIA App.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/CxNative_NVIDIA App.1.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/debug.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/console.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate_admin.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/overrides.json",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/debug.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/console.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/selfupdate_admin.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/backend.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/backend.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/ApplicationStorage.json",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/NvBackend/SHIM.json",
+          "%ProgramData%/NVIDIA Corporation/NvTelemetry/NvTelemetry.log",
+          "%ProgramData%/NVIDIA Corporation/NvTelemetry/NvTelemetry.log.bak",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalSystem.log",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/CxNative_LocalSystem.1.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/UXD/Log.NVIDIA App.exe.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA App/UXD/Log.NVIDIA App.exe.log1",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UXD/Log.nvcontainer.exe.log",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UXD/Log.nvcontainer.exe.log1",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/console.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/console.log.bak",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/CxNative_NVIDIA Overlay.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/CxNative_NVIDIA Overlay.1.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/debug.log",
+          "%LocalAppData%/NVIDIA Corporation/NVIDIA Overlay/debug.log.bak",
+          "%LocalAppData/NVIDIA Corporation/FrameViewSDK/nvrla.log",
+          "%ProgramData%/NVIDIA Corporation/ShadowPlay/CaptureCore.log",
+          "%ProgramData%/NVIDIA Corporation/ShadowPlay/CaptureCore.old",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/G-Assist/VoiceQuery.log",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/G-Assist/GameAssist.log"
+        ],
+        "dirPath": [
+          "%LocalAppData%/NVIDIA Corporation/GfeSDK",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/Installer/Logs",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/profile-catalog",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/registry",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/UpdateFramework/status",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/MessageBus",
+          "%ProgramData%/NVIDIA Corporation/NVIDIA App/NvContainer"
+        ],
+        "includeList": [
+          ".log",
+          ".bak",
+          ".log_backup",
+          ".log_backup1",
+          ".json"
+        ]
+      }
+    ]
+  }
+}

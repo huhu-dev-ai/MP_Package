@@ -1,0 +1,3 @@
+{
+    "ModuleMap\\CrimsonUtil.dll": "${{NVCONTAINER_INSTALL_ROOT}}/CrimsonUtil.dll"
+}

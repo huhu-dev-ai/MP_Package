@@ -1,0 +1,3 @@
+﻿NVIDIA App 是您的 NVIDIA GPU 控制中心。通过 NVIDIA App，您可以轻松获取最新驱动和其它 NVIDIA 软件、调整 GPU 设置，以及在游戏内浮窗体验录屏等诸多强大功能。 
+
+继续安装将会把 GeForce Experience 升级到 NVIDIA App，并保留您的偏好设置。

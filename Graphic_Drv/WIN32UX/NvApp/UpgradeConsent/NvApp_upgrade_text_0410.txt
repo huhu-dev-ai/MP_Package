@@ -1,0 +1,3 @@
+﻿NVIDIA App mette a disposizione un centro di controllo GPU unico per la scheda grafica NVIDIA. È il modo più semplice per permettere al PC di essere sempre aggiornato e di utilizzare la tecnologia e i driver NVIDIA più recenti. Consente di accedere facilmente alle esclusive applicazioni NVIDIA, a un centro di controllo GPU unico e ai potenti strumenti di registrazione disponibili in una sovrapposizione di gioco.
+
+L’installazione aggiorna GeForce Experience consentendo di passare a NVIDIA App e trasferisce nel nuovo ambiente le preferenze personali.

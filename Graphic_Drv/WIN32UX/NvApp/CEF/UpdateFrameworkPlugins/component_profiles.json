@@ -1,0 +1,692 @@
+[
+  {
+    "componentName": "grd",
+    "autoUpdateSchedule": "",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "https://gfwsl.geforce.com/",
+        "apiPart": "nvidia_web_services/controller.gfeclientcontent.NG.php/com.nvidia.services.GFEClientContent_NG.getDispDrvrByDevid/",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          },
+          "trustedSigners": [
+            "NVIDIACorporation",
+            "MicrosoftCorporation"
+          ],
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "checksumExpect": "",
+          "checksumType": "sha256"
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {
+        "retryDelayMs": 60000
+      }
+    ]
+  },
+  {
+    "componentName": "crd",
+    "autoUpdateSchedule": "",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "https://gfwsl.geforce.com/",
+        "apiPart": "nvidia_web_services/controller.gfeclientcontent.NG.php/com.nvidia.services.GFEClientContent_NG.getDispDrvrByDevid/",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          },
+          "trustedSigners": [
+            "NVIDIACorporation",
+            "MicrosoftCorporation"
+          ],
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "checksumExpect": "",
+          "checksumType": "sha256"
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {
+        "retryDelayMs": 60000
+      }
+    ]
+  },
+  {
+    "componentName": "nvapp",
+    "autoUpdateSchedule": "xxx",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "https://ota.nvidia.com",
+        "apiPart": "/NvApp/v1.0/self-update/",
+        "parameterSeparator": "?",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          },
+          "trustedSigners": [
+            "NVIDIACorporation",
+            "MicrosoftCorporation"
+          ],
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "checksumExpect": "",
+          "checksumType": "sha256"
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {
+        "retryDelayMs": 60000
+      }
+    ]
+  },
+  {
+    "componentName": "c88382b5-5bca-48a8-b053-50965f413725",
+    "autoUpdateSchedule": "",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          },
+          "trustedSigners": [
+            "NVIDIACorporation",
+            "MicrosoftCorporation"
+          ],
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "checksumExpect": "",
+          "checksumType": "sha256"
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {
+        "retryDelayMs": 60000
+      }
+    ]
+  },
+  {
+    "componentName": "e18e78c2-fda6-478d-9e30-3b0d2fb71020",
+    "autoUpdateSchedule": "",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          },
+          "trustedSigners": [
+            "NVIDIACorporation",
+            "MicrosoftCorporation"
+          ],
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "checksumExpect": "",
+          "checksumType": ""
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {
+        "retryDelayMs": 60000
+      }
+    ]
+  },
+  {
+    "componentName": "1c606ba5-40fb-44e4-84d3-7c696ba14336",
+    "autoUpdateSchedule": "",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          },
+          "trustedSigners": [
+            "NVIDIACorporation",
+            "MicrosoftCorporation"
+          ],
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "checksumExpect": "",
+          "checksumType": "sha256"
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {
+        "retryDelayMs": 60000
+      }
+    ]
+  },
+  {
+    "componentName": "128c3825-b502-4b20-aacd-6a4898c2adc0",
+    "autoUpdateSchedule": "",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          },
+          "trustedSigners": [
+            "NVIDIACorporation",
+            "MicrosoftCorporation"
+          ],
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "checksumExpect": "",
+          "checksumType": "sha256",
+          "installationKey": ""
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {
+        "retryDelayMs": 60000
+      }
+    ]
+  },
+  {
+    "componentName": "0f4e0f52-e8bc-4671-a19c-ffe0cdede720",
+    "autoUpdateSchedule": "",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          },
+          "trustedSigners": [
+            "NVIDIACorporation",
+            "MicrosoftCorporation"
+          ],
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "checksumExpect": "",
+          "checksumType": "sha256"
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {
+        "retryDelayMs": 60000
+      }
+    ]
+  },
+  {
+    "componentName": "default",
+    "autoUpdateSchedule": "",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          },
+          "trustedSigners": [
+            "NVIDIACorporation",
+            "MicrosoftCorporation"
+          ],
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "checksumExpect": "",
+          "checksumType": "sha256"
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {
+        "retryDelayMs": 60000
+      }
+    ]
+  },
+  {
+    "componentName": "9daf22d4-651e-40d3-ac52-8af3a774a98f",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "autoUpdateSchedule": "",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "checksumExpect": "",
+          "checksumType": "sha512",
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "installationKey": "Computer\\HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\7cc99ea5-8362-58dc-aab5-13f0a1c6fc2d",
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          }
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {}
+    ]
+  },
+  {
+    "componentName": "4f2e5a1d-3e97-40f3-abf0-8519959c55b7",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "autoUpdateSchedule": "",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "checksumExpect": "",
+          "checksumType": "sha512",
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "installationKey": "Computer\\HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_FrameView",
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          }
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {}
+    ]
+  },
+  {
+    "componentName": "fd610678-8bc1-45fe-a594-db78a542d7f1",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "autoUpdateSchedule": "",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "checksumExpect": "",
+          "checksumType": "sha512",
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "installationKey": "Computer\\HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_ChatRTX",
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          }
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {}
+    ]
+  },
+  {
+    "componentName": "0531d9f7-ad85-41fd-98e1-634a5e9ca54e",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "autoUpdateSchedule": "",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "threadCount": 5,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "checksumExpect": "",
+          "checksumType": "sha512",
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "installationKey": "Computer\\HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_RTX.Remix",
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          }
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {}
+    ]
+  },
+  {
+    "componentName": "4dbb1cfe-554f-4959-a558-3011ec502633",
+    "pluginModuleName": "UpdateFrameworkPlugin.dll",
+    "autoUpdateSchedule": "",
+    "updateCheckerProfiles": [
+      {
+        "priority": 0,
+        "otaBaseUrl": "",
+        "apiPart": "",
+        "parameterSeparator": "",
+        "maxDaysBetweenReleases": 60,
+        "networkConfig": {
+          "httpProxy": "",
+          "usernameProxy": "",
+          "passwordProxy": "",
+          "proxyNtlm": false,
+          "userAgent": ""
+        }
+      }
+    ],
+    "downloaderProfiles": [
+      {
+        "downloadConfig": {
+          "threadCount": 1,
+          "maxStallTime": 3,
+          "maxRetryCount": 10,
+          "retryDelay": 1,
+          "checksumExpect": "",
+          "checksumType": "sha512",
+          "retryDelayMultiplier": 1,
+          "maxFailureCount": 3,
+          "installationKey": "Computer\\HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_GAssist",
+          "networkConfig": {
+            "httpProxy": "",
+            "usernameProxy": "",
+            "passwordProxy": "",
+            "proxyNtlm": false,
+            "userAgent": ""
+          }
+        }
+      }
+    ],
+    "postProcessingProfiles": [
+      {}
+    ]
+  }
+]

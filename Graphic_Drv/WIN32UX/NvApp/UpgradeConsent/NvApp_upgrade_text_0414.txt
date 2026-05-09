@@ -1,0 +1,3 @@
+﻿NVIDIA App tilbyr et enhetlig GPU-kontrollsenter for NVIDIA-grafikkortet ditt. Det er den enkleste måten å holde datamaskinen din oppdatert på med de nyeste NVIDIA-driverne og teknologien. Den gir enkel tilgang til eksklusive NVIDIA-applikasjoner, et enhetlig GPU-kontrollsenter og kraftige opptaksverktøy som er tilgjengelige fra et overlegg i spillet.
+
+Installasjonen oppgraderer GeForce Experience til NVIDIA App, og overfører dine preferanser.

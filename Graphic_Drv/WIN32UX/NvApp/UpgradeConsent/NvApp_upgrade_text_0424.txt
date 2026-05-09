@@ -1,0 +1,3 @@
+﻿NVIDIA App ponuja enoten nadzorni center za grafične procesorje za vašo NVIDIA grafično kartico. To je najbolj preprost način, da ostane vaš računalnik posodobljen z zadnjimi NVIDIA gonilniki in tehnologijo. Omogoča enostaven dostop do ekskluzivnih aplikacij NVIDIA, poenotenega nadzornega središča za GPE in zmogljivih orodij za snemanje iz prekrivanja v igri.
+
+Namestitev nadgradi GeForce Experience v NVIDIA App in prenese vaše preference.

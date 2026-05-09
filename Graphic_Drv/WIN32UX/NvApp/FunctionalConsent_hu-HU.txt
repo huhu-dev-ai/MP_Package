@@ -1,0 +1,5 @@
+﻿Az NVIDIA Appnak adatokra van szüksége a grafikus kártya és az alkalmazás beállításainak konfigurálásához a legjobb játékélmény, tartalomkészítés és dizájn érdekében. Ismernünk kell a számítógépének hardver- és szoftverkonfigurációját, a telepített játékait és kreatív/tervező alkalmazásait, játékainak és alkalmazásainak beállításait és teljesítményadatait, az NVIDIA App használati mérőszámait és a földrajzi régióját. 
+
+Ezeket az adatokat az alkalmazásbeállításainak optimalizálásához, szoftver- és tartalomfrissítések biztosításához, az alkalmazás szolgáltatásainak javításához, kódok ingyenes játékokra való beváltásához és a helyi adatvédelmi törvényeknek való megfelelés érdekében használjuk.
+
+Adatvédelmi irányelveinkből megtudhatja, hogy milyen adatokat gyűjtünk, és mit teszünk velük.  Az adatvédelmi beállításokat az NVIDIA App Beállítások menüjében adhatja meg.

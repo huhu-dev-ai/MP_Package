@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nvi name="Display.NvApp" title="${{title}}" version="11.0.6.383" versionText="${{ProductVersion}}" installerMin="2.1002.285.0" timestamp="2026-01-16T07:58:39" disposition="default" continueOnFailure="true">
+	<filter name="64BitPlatform" platform="amd64,arm64"/>
+	<filter name="64BitPackage"/>
+	<filter name="${{IsBetaPackage}}"/>
+	<filter name="${{IsFullPackage}}"/>
+	<filter name="skipGPUCheck" cmdOption="-skipGPUCheck"/>
+	<strings>
+		<string name="baseTitle" value="NVIDIA App"/>
+		<string name="title" value="${{officialTitle}}"/>
+		<string name="DisplayVersion" value="11.0.6.383"/>
+		<string name="ProductVersion" value="${{DisplayVersion}}"/>
+		<string name="AppFolder" value="NVIDIA App"/>
+		<string name="InstallLocation" value="${{NvidiaProgramFiles}}\${{AppFolder}}"/>
+		<string name="LocalSystemPluginsDirectory" value="${{NvidiaProgramFiles}}\NvContainer\plugins\LocalSystem"/>
+		<string name="NvContainerLSName" value="NvContainerLocalSystem"/>
+		<string name="NvAppExeName" value="NVIDIA App.exe"/>
+		<string name="ShareExeName" value="NVIDIA Overlay.exe"/>
+		<string name="NvAppPermisionExeName" value="NVIDIA App Permission.exe"/>
+		<string name="NvAppExePath" value="${{InstallLocation}}\CEF\${{NvAppExeName}}"/>
+		<string name="NvAppGlobalRegKey" value="${{NvidiaSoftwareKey}}\Global\NvApp"/>
+		<string name="SelfUpdateInstallValue" value="false"/>
+		<string name="SkipOTADirDelMarkerValue" value="${{CommonAppData}}\NVIDIA Corporation\skipOTADirRemoval.dat"/>
+		<string name="EulaInstallLocationValue" value="${{InstallLocation}}\www\assets\main\eula"/>
+		<string name="crashDumpKey" value="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps"/>
+		<string name="NvAppEventSourceName" value="NvApp Service"/>
+		<string name="NvConfigDllPath" value="${{SubPackageDirectory}}\NvConfigGenerator.dll"/>
+		<string name="NvAppLogDirPath" value="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}"/>
+		<string name="NvContainerSuffixId" value="NvApp"/>
+		<string name="UserModelString" value="com.nvidia.nvapp"/>
+		<string name="TempLocation" value="${{LocalUserAppData}}\NVIDIA Corporation\NvApp_temp"/>
+		<string name="ContainerBinaryName" value="nvcontainer.exe"/>
+		<string name="DownloaderSettingSourceFilePathValue" value="${{CommonAppData}}\NVIDIA Corporation\Downloader\config\clientsettings.json"/>
+		<string name="DownloaderSettingTargetFilePathValue" value="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}\UpdateFramework\registry\nvapp.json"/>
+		<string name="persistFile0" value="${{LocalUserAppData}}\NVIDIA Corporation\NVIDIA Share\sharedstorage.json"/>
+		<string name="persistFile1" value="${{LocalUserAppData}}\NVIDIA Corporation\NVIDIA Share\Highlights"/>
+		<string name="persistFile2" value="${{LocalUserAppData}}\NVIDIA Corporation\GfeSDK"/>
+		<string name="persistFile3" value="${{CommonAppData}}\NVIDIA Corporation\NvBackend\config.xml"/>
+		<string name="persistFile4" value="${{LocalUserAppData}}\NVIDIA\NvBackend\config.xml"/>
+		<string name="persistFile5" value="${{CommonAppData}}\NVIDIA Corporation\Downloader\config\nvapp.json"/>
+		<string name="persistFile6" value="${{DownloaderSettingSourceFilePathValue}}"/>
+		<string name="persistFile7" value="${{LocalUserAppData}}\NVIDIA Corporation\NVIDIA GeForce Experience"/>
+		<string name="RedirectBaseUrl" value="http://www.nvidia.com/content/drivers/redirect.asp"/>
+		<string name="URLLanguageIdentifierToken" value="?language=${{AbbrevLangName}}"/>
+		<string name="SystemRequirementsURL" value="https://www.nvidia.com/${{Locale_ID}}/software/nvidia-app/system-requirements/#referrer=nvapp"/>
+		<string name="SystemRequirementsLink" value="&lt;a href=&quot;${{SystemRequirementsURL}}&quot;&gt;${{SystemRequirements}}&lt;/a&gt;"/>
+		<string name="EmailRedirectionRegistry" value="HKEY_LOCAL_MACHINE\SOFTWARE\Classes\nvidiaapp"/>
+		<string name="JPSThumbnailHandlerRegKey" value="HKEY_CLASSES_ROOT\jpsfile\ShellEx\{e357fccd-a995-4576-b01f-234630154e96}"/>
+		<string name="ConsentFilePath" value="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}\AcceptedEULA.txt"/>
+		<string name="TasksPath" value="${{SystemDirectory}}\Tasks"/>
+		<string name="taskGuid" value="_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}"/>
+		<string name="NvAppSelfUpdateTaskName" value="NVIDIA App SelfUpdate"/>
+		<string name="NvidiaWOW6432NodePath" value="HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\NVIDIA Corporation"/>
+		<string name="SupportedGPUUrl" value="https://nvidia.custhelp.com/app/answers/detail/a_id/5676"/>
+		<string name="SupportedGPULink" value="href=&quot;${{SupportedGPUUrl}}&quot;"/>
+		<string name="SupportedGPUMessage" value="Your system configuration is not supported by this installer. A list of supported hardware and OS can be found &lt;a ${{SupportedGPULink}}&gt; here &lt;/a&gt;."/>
+		<string name="LoginIdTempLocation" value="${{TempDirectory}}\b54d7450-ed42-4d0c-8088-74133cadf824"/>
+	</strings>
+	<dependencies>
+		<package type="uninstalls" package="Display.GFExperience" when="install"/>
+		<package type="uninstalls" package="Display.QuadroExperience" when="install"/>
+		<package type="requires" package="NvTelemetry"/>
+		<package type="requires" package="Display.NvApp.MessageBus"/>
+		<package type="requires" package="Display.NvApp.NvBackend"/>
+		<package type="requires" package="ShadowPlay"/>
+		<package type="requires" package="NvContainer.Session"/>
+		<package type="requires" package="Display.NvApp.NvCPL"/>
+		<package type="requires" package="NvDLISR"/>
+	</dependencies>
+	<properties>
+		<string name="ConsentLocation" value="${{ConsentFilePath}}"/>
+		<string name="FailureLogLocation" value="${{NvAppLogDirPath}}\CefCache\console.log"/>
+		<bool name="CollectLogsOnFailure" value="true"/>
+		<string name="NvAppProcessName" value="${{NvAppExeName}}"/>
+		<string name="NvAppProcessPath" value="${{NvAppExePath}}"/>
+		<string name="ArpDisplayName" value="${{officialTitle}} ${{ProductVersion}}"/>
+		<bool name="CreateDesktopShortcut" value="true"/>
+		<if filter="!skipGPUCheck">
+			<bool name="LaunchNvApp" value="true"/>
+		</if>
+		<if filter="SkipOptions">
+			<bool name="SkipOptions" value="true"/>
+			<string name="InstallType" value="Express"/>
+		</if>
+		<bool name="SelfUpdateInstall" value="${{SelfUpdateInstallValue}}"/>
+		<string name="EULAFileName" value="EULA.txt"/>
+		<string name="FunctionalConsentFileName" value="FunctionalConsent_en-US.txt"/>
+		<string name="EulaInstallLocation" value="${{EulaInstallLocationValue}}"/>
+		<bool name="IsNvAppComponent" value="true"/>
+		<bool name="DesktopShortcutExists" value="false"/>
+		<string name="TempLocation" value="${{TempLocation}}"/>
+		<string name="persistFile0" value="${{persistFile0}}"/>
+		<string name="persistFile1" value="${{persistFile1}}"/>
+		<string name="persistFile2" value="${{persistFile2}}"/>
+		<string name="persistFile3" value="${{persistFile3}}"/>
+		<string name="persistFile4" value="${{persistFile4}}"/>
+		<string name="persistFile5" value="${{persistFile5}}"/>
+		<string name="persistFile6" value="${{persistFile6}}"/>
+		<string name="persistFile7" value="${{persistFile7}}"/>
+		<bool name="IsSettingsPersisted" value="false"/>
+		<if filter="64BitPackage">
+			<bool name="Is64Bit" value="true"/>
+		</if>
+		<bool name="UsesMsvcrt2017" value="true"/>
+		<string name="SkipOTADirDelMarker" value="${{SkipOTADirDelMarkerValue}}"/>
+		<string name="ShareExeName" value="NVIDIA Overlay.exe"/>
+		<string name="HelperExeName" value="nvsphelper64.exe"/>
+	</properties>
+	<constraints>
+		<reject name="CheckNotSafeMode" tests="SAFEMODE" level="silent" text="${{InstallSafeModeBlockedMessage}}"/>
+		<custom name="CheckIfNotAnUpgrade" level="error" text="${{NotAnUpgradeMessage}}"/>
+		<os min="10.0" name="OperatingSystemSupportCheck" level="silent" text="${{officialTitle}} requires Windows10 or later."/>
+		<if filter="!skipGPUCheck">
+			<custom name="CheckNvGpu" level="silent" text="${{NvGpuRequired}}"/>
+			<custom name="CheckIfGPUIsSupported" level="silent" text="${{SupportedGPUMessage}}"/>
+		</if>
+	</constraints>
+	<manifest>
+		<file name="NvApp.nvi"/>
+		<file name="EULA.txt"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_cs-CZ.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_da-DK.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_de-DE.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_el-GR.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_en-US.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_en-GB.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_es-ES.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_es-MX.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_fi-FI.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_fr-FR.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_hu-HU.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_it-IT.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_ja-JP.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_ko-KR.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_nl-NL.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_nb-NO.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_pl-PL.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_pt-PT.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_pt-BR.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_ru-RU.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_sk-SK.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_sl-SI.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_sv-SE.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_th-TH.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_tr-TR.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_zh-CHS.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_zh-CHT.htm"/>
+		<file name="PrivacyPolicy\PrivacyPolicy_uk-UA.htm"/>
+		<file name="FunctionalConsent_cs-CZ.txt"/>
+		<file name="FunctionalConsent_da-DK.txt"/>
+		<file name="FunctionalConsent_de-DE.txt"/>
+		<file name="FunctionalConsent_el-GR.txt"/>
+		<file name="FunctionalConsent_en-US.txt"/>
+		<file name="FunctionalConsent_en-GB.txt"/>
+		<file name="FunctionalConsent_es-ES.txt"/>
+		<file name="FunctionalConsent_es-MX.txt"/>
+		<file name="FunctionalConsent_fi-FI.txt"/>
+		<file name="FunctionalConsent_fr-FR.txt"/>
+		<file name="FunctionalConsent_hu-HU.txt"/>
+		<file name="FunctionalConsent_it-IT.txt"/>
+		<file name="FunctionalConsent_ja-JP.txt"/>
+		<file name="FunctionalConsent_ko-KR.txt"/>
+		<file name="FunctionalConsent_nl-NL.txt"/>
+		<file name="FunctionalConsent_nb-NO.txt"/>
+		<file name="FunctionalConsent_pl-PL.txt"/>
+		<file name="FunctionalConsent_pt-PT.txt"/>
+		<file name="FunctionalConsent_pt-BR.txt"/>
+		<file name="FunctionalConsent_ru-RU.txt"/>
+		<file name="FunctionalConsent_sk-SK.txt"/>
+		<file name="FunctionalConsent_sl-SI.txt"/>
+		<file name="FunctionalConsent_sv-SE.txt"/>
+		<file name="FunctionalConsent_th-TH.txt"/>
+		<file name="FunctionalConsent_tr-TR.txt"/>
+		<file name="FunctionalConsent_zh-CHS.txt"/>
+		<file name="FunctionalConsent_zh-CHT.txt"/>
+		<file name="FunctionalConsent_uk-UA.txt"/>
+		<file name="7z.dll" sizeKB="1782"/><file name="7z.exe" sizeKB="543"/><file name="FunctionalConsent_ar-SA.txt" sizeKB="2"/><file name="FunctionalConsent_he-IL.txt" sizeKB="2"/><file name="InstallerExtension.dll" sizeKB="1142"/><file name="license.txt" sizeKB="94"/><file name="NvAppExt.dll" sizeKB="1471"/><file name="PrivacyPolicy\PrivacyPolicy_ar-SA.htm" sizeKB="174"/><file name="PrivacyPolicy\PrivacyPolicy_he-IL.htm" sizeKB="175"/><file name="UpgradeConsent\NvApp_upgrade_text_0401.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0404.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0405.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0406.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0407.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0408.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0409.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_040a.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_040b.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_040c.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_040d.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_040e.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0410.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0411.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0412.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0413.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0414.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0415.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0416.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0419.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_041b.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_041d.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_041e.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_041f.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0422.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0424.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0804.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0809.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_080a.txt" sizeKB="1"/><file name="UpgradeConsent\NvApp_upgrade_text_0816.txt" sizeKB="1"/><file name="DarkModeCheck.exe"/><file name="NvAppApi.dll"/><file name="NvConfigGenerator.dll"/><file name="CEF\chrome_100_percent.pak"/><file name="CEF\chrome_200_percent.pak"/><file name="CEF\chrome_elf.dll"/><file name="CEF\d3dcompiler_47.dll"/><file name="CEF\icudtl.dat"/><file name="CEF\libcef.dll"/><file name="CEF\libEGL.dll"/><file name="CEF\libGLESv2.dll"/><file name="CEF\NVIDIA App.exe"/><file name="CEF\NVIDIA Overlay.exe"/><file name="CEF\resources.pak"/><file name="CEF\snapshot_blob.bin"/><file name="CEF\v8_context_snapshot.bin"/><file name="CEF\config\DesktopNotification.json"/><file name="CEF\config\Diagnostics.json"/><file name="CEF\config\Downloader.json"/><file name="CEF\config\DriverUpdateRecommendation.json"/><file name="CEF\config\NvAccount.json"/><file name="CEF\config\NvDriverDiagnostics.json"/><file name="CEF\config\NvKVStorage.json"/><file name="CEF\config\NvLocalizedConfig.json"/><file name="CEF\config\_OverClockingNvc.json"/><file name="CEF\dependencies\CrimsonUtil.dll"/><file name="CEF\dependencies\libcrypto-3-x64.dll"/><file name="CEF\locales\af.pak"/><file name="CEF\locales\am.pak"/><file name="CEF\locales\ar.pak"/><file name="CEF\locales\bg.pak"/><file name="CEF\locales\bn.pak"/><file name="CEF\locales\ca.pak"/><file name="CEF\locales\cs.pak"/><file name="CEF\locales\da.pak"/><file name="CEF\locales\de.pak"/><file name="CEF\locales\el.pak"/><file name="CEF\locales\en-GB.pak"/><file name="CEF\locales\en-US.pak"/><file name="CEF\locales\es-419.pak"/><file name="CEF\locales\es.pak"/><file name="CEF\locales\et.pak"/><file name="CEF\locales\fa.pak"/><file name="CEF\locales\fi.pak"/><file name="CEF\locales\fil.pak"/><file name="CEF\locales\fr.pak"/><file name="CEF\locales\gu.pak"/><file name="CEF\locales\he.pak"/><file name="CEF\locales\hi.pak"/><file name="CEF\locales\hr.pak"/><file name="CEF\locales\hu.pak"/><file name="CEF\locales\id.pak"/><file name="CEF\locales\it.pak"/><file name="CEF\locales\ja.pak"/><file name="CEF\locales\kn.pak"/><file name="CEF\locales\ko.pak"/><file name="CEF\locales\lt.pak"/><file name="CEF\locales\lv.pak"/><file name="CEF\locales\ml.pak"/><file name="CEF\locales\mr.pak"/><file name="CEF\locales\ms.pak"/><file name="CEF\locales\nb.pak"/><file name="CEF\locales\nl.pak"/><file name="CEF\locales\pl.pak"/><file name="CEF\locales\pt-BR.pak"/><file name="CEF\locales\pt-PT.pak"/><file name="CEF\locales\ro.pak"/><file name="CEF\locales\ru.pak"/><file name="CEF\locales\sk.pak"/><file name="CEF\locales\sl.pak"/><file name="CEF\locales\sr.pak"/><file name="CEF\locales\sv.pak"/><file name="CEF\locales\sw.pak"/><file name="CEF\locales\ta.pak"/><file name="CEF\locales\te.pak"/><file name="CEF\locales\th.pak"/><file name="CEF\locales\tr.pak"/><file name="CEF\locales\uk.pak"/><file name="CEF\locales\ur.pak"/><file name="CEF\locales\vi.pak"/><file name="CEF\locales\zh-CN.pak"/><file name="CEF\locales\zh-TW.pak"/><file name="CEF\NvidiaAppPermissionOc\NVIDIA App Permission.exe"/><file name="CEF\NvLocalizedConfig\NvLocalizedConfig.conf"/><file name="CEF\NvLocalizedConfig\NvLocalizedConfig.dll"/><file name="CEF\plugins\BackgroundProcess\BackgroundProcess.conf"/><file name="CEF\plugins\BackgroundProcess\BackgroundProcess.dll"/><file name="CEF\plugins\Base\LocalGames.dll"/><file name="CEF\plugins\Base\NvCplDisplayPlugin.dll"/><file name="CEF\plugins\Base\NvCplPlugin.dll"/><file name="CEF\plugins\Base\NvPerfMon.dll"/><file name="CEF\plugins\Base\SystemInfo.dll"/><file name="CEF\plugins\NVIDIA App\AppDiscovery.dll"/><file name="CEF\plugins\NVIDIA App\DriverInstall.dll"/><file name="CEF\plugins\NVIDIA App\LoginId.dll"/><file name="CEF\plugins\NVIDIA App\MessageBusRouter.conf"/><file name="CEF\plugins\NVIDIA App\MessageBusRouter.dll"/><file name="CEF\plugins\NVIDIA App\NvIGOUtil.dll"/><file name="CEF\plugins\NVIDIA App\NvOc.dll"/><file name="CEF\plugins\NVIDIA Overlay\Gallery.dll"/><file name="CEF\plugins\NVIDIA Overlay\GraphicsSetting.dll"/><file name="CEF\plugins\NVIDIA Overlay\MessageBusRouter.conf"/><file name="CEF\plugins\NVIDIA Overlay\NvCamera.dll"/><file name="CEF\plugins\NVIDIA Overlay\Rise.dll"/><file name="CEF\plugins\NVIDIA Overlay\ShareServer.dll"/><file name="CEF\Resources\NVIDIA App.json"/><file name="CEF\Resources\NVIDIA Overlay.json"/><file name="CEF\Resources\config\DesktopNotification.json"/><file name="CEF\Resources\config\Diagnostics.json"/><file name="CEF\Resources\config\NvCplPlugin.json"/><file name="CEF\Resources\config\product-config.json"/><file name="CEF\Resources\config\ShareServer.json"/><file name="CEF\UpdateFrameworkPlugins\component_profiles.json"/><file name="CEF\UpdateFrameworkPlugins\UpdateFrameworkPlugin.dll"/><file name="EULA\EULA_ar-SA.html"/><file name="EULA\EULA_cs-CZ.html"/><file name="EULA\EULA_da-DK.html"/><file name="EULA\EULA_de-DE.html"/><file name="EULA\EULA_el-GR.html"/><file name="EULA\EULA_en-GB.html"/><file name="EULA\EULA_en-US.html"/><file name="EULA\EULA_es-ES.html"/><file name="EULA\EULA_es-MX.html"/><file name="EULA\EULA_fi-FI.html"/><file name="EULA\EULA_fr-FR.html"/><file name="EULA\EULA_he-IL.html"/><file name="EULA\EULA_hu-HU.html"/><file name="EULA\EULA_it-IT.html"/><file name="EULA\EULA_ja-JP.html"/><file name="EULA\EULA_ko-KR.html"/><file name="EULA\EULA_nb-NO.html"/><file name="EULA\EULA_nl-NL.html"/><file name="EULA\EULA_pl-PL.html"/><file name="EULA\EULA_pt-BR.html"/><file name="EULA\EULA_pt-PT.html"/><file name="EULA\EULA_ru-RU.html"/><file name="EULA\EULA_sk-SK.html"/><file name="EULA\EULA_sl-SI.html"/><file name="EULA\EULA_sv-SE.html"/><file name="EULA\EULA_th-TH.html"/><file name="EULA\EULA_tr-TR.html"/><file name="EULA\EULA_uk-UA.html"/><file name="EULA\EULA_zh-CHS.html"/><file name="EULA\EULA_zh-CHT.html"/><file name="osc\137.dc2b273967355794.js"/><file name="osc\177.c990af2562799c19.js"/><file name="osc\3rdpartylicenses.txt"/><file name="osc\531.a97ff808b5a5a618.js"/><file name="osc\832.3aa4c6003b2080e3.js"/><file name="osc\common.284086c5a315584f.js"/><file name="osc\DefaultGameArt-TVBanner.7d2c1373548b55d4.svg"/><file name="osc\Deselect_All_24.9c60743cf04d1b72.svg"/><file name="osc\favicon.ico"/><file name="osc\gfn-web.23bf3c9bdf927358.js"/><file name="osc\index.html"/><file name="osc\LoginWallContentBackground.aaee13678249a527.webp"/><file name="osc\main.0176325edd4bcc6c.js"/><file name="osc\marquee-image-metadata.e0495ab1ef23d7c9.js"/><file name="osc\Marquee_Hero_Image_Gradient.97da07cc527f6200.svg"/><file name="osc\Marquee_Hero_Image_Gradient_RTL.8f28b6a06d45d190.svg"/><file name="osc\MaterialIcons-Regular.196fa4a92dd6fa73.ttf"/><file name="osc\MaterialIcons-Regular.1e50f5c2ffa6aba4.eot"/><file name="osc\MaterialIcons-Regular.7ea2023eeca07427.woff2"/><file name="osc\MaterialIcons-Regular.db852539204b1a34.woff"/><file name="osc\mobile_marquee_hero_mask_ltr.847d01c9a13bfbfb.webp"/><file name="osc\mobile_marquee_hero_mask_rtl.11d53446b93cdd22.webp"/><file name="osc\NVIDIASans_W_Bd.5aafff8b08f9a971.woff2"/><file name="osc\NVIDIASans_W_Md.14ea224b997bf6e0.woff2"/><file name="osc\NVIDIASans_W_Rg.33fb51adcc625f4e.woff2"/><file name="osc\polyfills.bf75149cdc274fc4.js"/><file name="osc\runtime.9e6d732194798d06.js"/><file name="osc\Select_All_24.5528d1942c3b1881.svg"/><file name="osc\styles.41b5da66e05a2a1b.css"/><file name="osc\assets\i18n\ar_SA.json"/><file name="osc\assets\i18n\bg_BG.json"/><file name="osc\assets\i18n\cs_CZ.json"/><file name="osc\assets\i18n\da_DK.json"/><file name="osc\assets\i18n\de_DE.json"/><file name="osc\assets\i18n\el_GR.json"/><file name="osc\assets\i18n\en_GB.json"/><file name="osc\assets\i18n\en_US.json"/><file name="osc\assets\i18n\es_ES.json"/><file name="osc\assets\i18n\es_MX.json"/><file name="osc\assets\i18n\fi_FI.json"/><file name="osc\assets\i18n\fr_FR.json"/><file name="osc\assets\i18n\hr_HR.json"/><file name="osc\assets\i18n\hu_HU.json"/><file name="osc\assets\i18n\it_IT.json"/><file name="osc\assets\i18n\ja_JP.json"/><file name="osc\assets\i18n\ko_KR.json"/><file name="osc\assets\i18n\nb_NO.json"/><file name="osc\assets\i18n\nl_NL.json"/><file name="osc\assets\i18n\pl_PL.json"/><file name="osc\assets\i18n\pt_BR.json"/><file name="osc\assets\i18n\pt_PT.json"/><file name="osc\assets\i18n\ro_RO.json"/><file name="osc\assets\i18n\ru_RU.json"/><file name="osc\assets\i18n\sk_SK.json"/><file name="osc\assets\i18n\sl_SI.json"/><file name="osc\assets\i18n\sv_SE.json"/><file name="osc\assets\i18n\th_TH.json"/><file name="osc\assets\i18n\tr_TR.json"/><file name="osc\assets\i18n\uk_UA.json"/><file name="osc\assets\i18n\zh_CN.json"/><file name="osc\assets\i18n\zh_TW.json"/><file name="osc\assets\img\geforce_mark.svg"/><file name="osc\assets\img\img_gfe_branding.svg"/><file name="osc\assets\img\img_gfn_branding.svg"/><file name="Plugins\localuser\NvAccount.dll"/><file name="Plugins\localuser\NvApp\DesktopNotification.dll"/><file name="Plugins\localuser\NvApp\Diagnostics.dll"/><file name="Plugins\localuser\NvApp\Downloader.dll"/><file name="Plugins\localuser\NvApp\DriverUpdateRecommendation.dll"/><file name="Plugins\localuser\NvApp\NvKVStorage.dll"/><file name="Plugins\oc\_OverClockingNvc.dll"/><file name="Plugins\session\NvDriverDiagnostics.dll"/><file name="www\109.887bf5d894e6915d.js"/><file name="www\3rdpartylicenses.txt"/><file name="www\538.881809b2c7eec0b8.js"/><file name="www\568.e24c34e6c6c73f74.js"/><file name="www\586.9acb392c484cf13a.js"/><file name="www\718.4abdceb8fdb88be4.js"/><file name="www\754.374aaf21aeda48eb.js"/><file name="www\88.5dc34087ac07ba52.js"/><file name="www\880.2d1079367067944b.js"/><file name="www\981.f5be8d3af7ba4b20.js"/><file name="www\common.f4e52985a850355d.js"/><file name="www\favicon.ico"/><file name="www\index.html"/><file name="www\main.d6639bbff80fad6e.js"/><file name="www\nvapp-service-worker.js"/><file name="www\offline.html"/><file name="www\polyfills.9f6fe9d1b0e3b8c2.js"/><file name="www\runtime.655cac60f9d10a46.js"/><file name="www\styles.48012a4fa14bfb7a.css"/><file name="www\assets\cefclient\img\icon.png"/><file name="www\assets\cefclient\img\1.25X\icon1.25.png"/><file name="www\assets\cefclient\img\1.5X\icon1.5.png"/><file name="www\assets\cefclient\img\2.0X\icon2.0.png"/><file name="www\assets\cefclient\img\2.5X\icon2.5.png"/><file name="www\assets\cefclient\light\1.0X\close_default_icon10.png"/><file name="www\assets\cefclient\light\1.0X\close_disable_icon10.png"/><file name="www\assets\cefclient\light\1.0X\close_hover_icon10.png"/><file name="www\assets\cefclient\light\1.0X\close_press_icon10.png"/><file name="www\assets\cefclient\light\1.0X\maximize_default_icon10.png"/><file name="www\assets\cefclient\light\1.0X\maximize_disable_icon10.png"/><file name="www\assets\cefclient\light\1.0X\maximize_hover_icon10.png"/><file name="www\assets\cefclient\light\1.0X\maximize_press_icon10.png"/><file name="www\assets\cefclient\light\1.0X\minimize_default_icon10.png"/><file name="www\assets\cefclient\light\1.0X\minimize_disable_icon10.png"/><file name="www\assets\cefclient\light\1.0X\minimize_hover_icon10.png"/><file name="www\assets\cefclient\light\1.0X\minimize_press_icon10.png"/><file name="www\assets\cefclient\light\1.0X\windowmode_default_icon10.png"/><file name="www\assets\cefclient\light\1.0X\windowmode_disable_icon10.png"/><file name="www\assets\cefclient\light\1.0X\windowmode_hover_icon10.png"/><file name="www\assets\cefclient\light\1.0X\windowmode_press_icon10.png"/><file name="www\assets\cefclient\light\1.25X\close_default_icon125.png"/><file name="www\assets\cefclient\light\1.25X\close_disable_icon125.png"/><file name="www\assets\cefclient\light\1.25X\close_hover_icon125.png"/><file name="www\assets\cefclient\light\1.25X\close_press_icon125.png"/><file name="www\assets\cefclient\light\1.25X\maximize_default_icon125.png"/><file name="www\assets\cefclient\light\1.25X\maximize_disable_icon125.png"/><file name="www\assets\cefclient\light\1.25X\maximize_hover_icon125.png"/><file name="www\assets\cefclient\light\1.25X\maximize_press_icon125.png"/><file name="www\assets\cefclient\light\1.25X\minimize_default_icon125.png"/><file name="www\assets\cefclient\light\1.25X\minimize_disable_icon125.png"/><file name="www\assets\cefclient\light\1.25X\minimize_hover_icon125.png"/><file name="www\assets\cefclient\light\1.25X\minimize_press_icon125.png"/><file name="www\assets\cefclient\light\1.25X\windowmode_default_icon125.png"/><file name="www\assets\cefclient\light\1.25X\windowmode_disable_icon125.png"/><file name="www\assets\cefclient\light\1.25X\windowmode_hover_icon125.png"/><file name="www\assets\cefclient\light\1.25X\windowmode_press_icon125.png"/><file name="www\assets\cefclient\light\1.5X\close_default_icon15.png"/><file name="www\assets\cefclient\light\1.5X\close_disable_icon15.png"/><file name="www\assets\cefclient\light\1.5X\close_hover_icon15.png"/><file name="www\assets\cefclient\light\1.5X\close_press_icon15.png"/><file name="www\assets\cefclient\light\1.5X\maximize_default_icon15.png"/><file name="www\assets\cefclient\light\1.5X\maximize_disable_icon15.png"/><file name="www\assets\cefclient\light\1.5X\maximize_hover_icon15.png"/><file name="www\assets\cefclient\light\1.5X\maximize_press_icon15.png"/><file name="www\assets\cefclient\light\1.5X\minimize_default_icon15.png"/><file name="www\assets\cefclient\light\1.5X\minimize_disable_icon15.png"/><file name="www\assets\cefclient\light\1.5X\minimize_hover_icon15.png"/><file name="www\assets\cefclient\light\1.5X\minimize_press_icon15.png"/><file name="www\assets\cefclient\light\1.5X\windowmode_default_icon15.png"/><file name="www\assets\cefclient\light\1.5X\windowmode_disable_icon15.png"/><file name="www\assets\cefclient\light\1.5X\windowmode_hover_icon15.png"/><file name="www\assets\cefclient\light\1.5X\windowmode_press_icon15.png"/><file name="www\assets\cefclient\light\2.0X\close_default_icon20.png"/><file name="www\assets\cefclient\light\2.0X\close_disable_icon20.png"/><file name="www\assets\cefclient\light\2.0X\close_hover_icon20.png"/><file name="www\assets\cefclient\light\2.0X\close_press_icon20.png"/><file name="www\assets\cefclient\light\2.0X\maximize_default_icon20.png"/><file name="www\assets\cefclient\light\2.0X\maximize_disable_icon20.png"/><file name="www\assets\cefclient\light\2.0X\maximize_hover_icon20.png"/><file name="www\assets\cefclient\light\2.0X\maximize_press_icon20.png"/><file name="www\assets\cefclient\light\2.0X\minimize_default_icon20.png"/><file name="www\assets\cefclient\light\2.0X\minimize_disable_icon20.png"/><file name="www\assets\cefclient\light\2.0X\minimize_hover_icon20.png"/><file name="www\assets\cefclient\light\2.0X\minimize_press_icon20.png"/><file name="www\assets\cefclient\light\2.0X\windowmode_default_icon20.png"/><file name="www\assets\cefclient\light\2.0X\windowmode_disable_icon20.png"/><file name="www\assets\cefclient\light\2.0X\windowmode_hover_icon20.png"/><file name="www\assets\cefclient\light\2.0X\windowmode_press_icon20.png"/><file name="www\assets\cefclient\light\2.5X\close_default_icon25.png"/><file name="www\assets\cefclient\light\2.5X\close_disable_icon25.png"/><file name="www\assets\cefclient\light\2.5X\close_hover_icon25.png"/><file name="www\assets\cefclient\light\2.5X\close_press_icon25.png"/><file name="www\assets\cefclient\light\2.5X\maximize_default_icon25.png"/><file name="www\assets\cefclient\light\2.5X\maximize_disable_icon25.png"/><file name="www\assets\cefclient\light\2.5X\maximize_hover_icon25.png"/><file name="www\assets\cefclient\light\2.5X\maximize_press_icon25.png"/><file name="www\assets\cefclient\light\2.5X\minimize_default_icon25.png"/><file name="www\assets\cefclient\light\2.5X\minimize_disable_icon25.png"/><file name="www\assets\cefclient\light\2.5X\minimize_hover_icon25.png"/><file name="www\assets\cefclient\light\2.5X\minimize_press_icon25.png"/><file name="www\assets\cefclient\light\2.5X\windowmode_default_icon25.png"/><file name="www\assets\cefclient\light\2.5X\windowmode_disable_icon25.png"/><file name="www\assets\cefclient\light\2.5X\windowmode_hover_icon25.png"/><file name="www\assets\cefclient\light\2.5X\windowmode_press_icon25.png"/><file name="www\assets\config\config.json"/><file name="www\assets\hashed\DefaultGameArt-TVBanner.7d2c1373548b55d4.svg"/><file name="www\assets\hashed\LoginWallContentBackground.aaee13678249a527.webp"/><file name="www\assets\hashed\Marquee_Hero_Image_Gradient.97da07cc527f6200.svg"/><file name="www\assets\hashed\Marquee_Hero_Image_Gradient_RTL.8f28b6a06d45d190.svg"/><file name="www\assets\hashed\MaterialIcons-Regular.196fa4a92dd6fa73.ttf"/><file name="www\assets\hashed\MaterialIcons-Regular.1e50f5c2ffa6aba4.eot"/><file name="www\assets\hashed\MaterialIcons-Regular.7ea2023eeca07427.woff2"/><file name="www\assets\hashed\MaterialIcons-Regular.db852539204b1a34.woff"/><file name="www\assets\hashed\mobile_marquee_hero_mask_ltr.847d01c9a13bfbfb.webp"/><file name="www\assets\hashed\mobile_marquee_hero_mask_rtl.11d53446b93cdd22.webp"/><file name="www\assets\hashed\NVIDIASans_W_Bd.5aafff8b08f9a971.woff2"/><file name="www\assets\hashed\NVIDIASans_W_Md.14ea224b997bf6e0.woff2"/><file name="www\assets\hashed\NVIDIASans_W_Rg.33fb51adcc625f4e.woff2"/><file name="www\assets\hashed\ootb-grd-driver-experience.ae47d97afbef711e.jpg"/><file name="www\assets\hashed\ootb-grd-ops-experience.98c0923bd68cfd11.jpg"/><file name="www\assets\hashed\ootb-grd-overlay-experience.a712d389f2f636aa.webp"/><file name="www\assets\hashed\ootb-grd-rewards-experience.d08599b6dfba97ba.webp"/><file name="www\assets\hashed\ootb-nsd-driver-experience.d8406fe99b7df33f.webp"/><file name="www\assets\hashed\ootb-nsd-ops-experience.649207328eda51ff.webp"/><file name="www\assets\hashed\ootb-nsd-overlay-experience.143ab5b607f0db65.webp"/><file name="www\assets\hashed\ootb-nsd-rewards-experience.dc6251a422b0d9bb.webp"/><file name="www\assets\hashed\ootb-nwd-driver-experience.5039068ad925bc01.webp"/><file name="www\assets\hashed\ootb-nwd-ops-experience.5cd200c7395eae61.webp"/><file name="www\assets\hashed\ootb-nwd-overlay-experience.c38db2b6d23a19d1.webp"/><file name="www\assets\i18n\ar_SA.json"/><file name="www\assets\i18n\bg_BG.json"/><file name="www\assets\i18n\cs_CZ.json"/><file name="www\assets\i18n\da_DK.json"/><file name="www\assets\i18n\de_DE.json"/><file name="www\assets\i18n\el_GR.json"/><file name="www\assets\i18n\en_GB.json"/><file name="www\assets\i18n\en_US.json"/><file name="www\assets\i18n\es_ES.json"/><file name="www\assets\i18n\es_MX.json"/><file name="www\assets\i18n\fi_FI.json"/><file name="www\assets\i18n\fr_FR.json"/><file name="www\assets\i18n\hr_HR.json"/><file name="www\assets\i18n\hu_HU.json"/><file name="www\assets\i18n\it_IT.json"/><file name="www\assets\i18n\ja_JP.json"/><file name="www\assets\i18n\ko_KR.json"/><file name="www\assets\i18n\nb_NO.json"/><file name="www\assets\i18n\nl_NL.json"/><file name="www\assets\i18n\pl_PL.json"/><file name="www\assets\i18n\pt_BR.json"/><file name="www\assets\i18n\pt_PT.json"/><file name="www\assets\i18n\ro_RO.json"/><file name="www\assets\i18n\ru_RU.json"/><file name="www\assets\i18n\sk_SK.json"/><file name="www\assets\i18n\sl_SI.json"/><file name="www\assets\i18n\sv_SE.json"/><file name="www\assets\i18n\th_TH.json"/><file name="www\assets\i18n\tr_TR.json"/><file name="www\assets\i18n\uk_UA.json"/><file name="www\assets\i18n\zh_CN.json"/><file name="www\assets\i18n\zh_TW.json"/><file name="www\assets\img\Asterisk_24.svg"/><file name="www\assets\img\auto_display_mode.svg"/><file name="www\assets\img\avatar_generic_118.svg"/><file name="www\assets\img\badge_G-Sync.svg"/><file name="www\assets\img\badge_G-Sync_ultimate.svg"/><file name="www\assets\img\coupons_expandable_banner.webp"/><file name="www\assets\img\DefaultGameArt.jpg"/><file name="www\assets\img\Deselect_All_24.svg"/><file name="www\assets\img\display_Port.svg"/><file name="www\assets\img\driver.svg"/><file name="www\assets\img\driver_update_notification_grd_fallback.webp"/><file name="www\assets\img\driver_update_notification_nsd_fallback.webp"/><file name="www\assets\img\DVI.svg"/><file name="www\assets\img\fallback-app-icon.svg"/><file name="www\assets\img\fallback-hero-image.svg"/><file name="www\assets\img\grd_desktop_notification_icon.webp"/><file name="www\assets\img\grd_marquee_fallback.webp"/><file name="www\assets\img\HDMI.svg"/><file name="www\assets\img\icon_igpu.svg"/><file name="www\assets\img\icon_laptop.svg"/><file name="www\assets\img\icon_monitor.svg"/><file name="www\assets\img\icon_tv.svg"/><file name="www\assets\img\installation-billboard-fallback.svg"/><file name="www\assets\img\landscape.svg"/><file name="www\assets\img\landscape_flipped.svg"/><file name="www\assets\img\laptop_Display.svg"/><file name="www\assets\img\lt_arrow.svg"/><file name="www\assets\img\marquee-fallback.svg"/><file name="www\assets\img\marquee-individual-fallback.svg"/><file name="www\assets\img\Marquee_Hero_Image_Fallback.webp"/><file name="www\assets\img\Marquee_Hero_Image_Gradient.svg"/><file name="www\assets\img\Marquee_Hero_Image_Gradient_RTL.svg"/><file name="www\assets\img\mobile_marquee_hero_mask_ltr.webp"/><file name="www\assets\img\mobile_marquee_hero_mask_rtl.webp"/><file name="www\assets\img\more-menu-hover_32_rounded-corners.svg"/><file name="www\assets\img\More-Menu_32.svg"/><file name="www\assets\img\nsd_marquee_fallback.webp"/><file name="www\assets\img\nv-gpu.svg"/><file name="www\assets\img\nvapp-logo.svg"/><file name="www\assets\img\nvidia_symbol.svg"/><file name="www\assets\img\nwd_marquee_fallback.webp"/><file name="www\assets\img\ootb-grd-driver-experience.jpg"/><file name="www\assets\img\ootb-grd-ops-experience.jpg"/><file name="www\assets\img\ootb-grd-overlay-experience.webp"/><file name="www\assets\img\ootb-grd-rewards-experience.webp"/><file name="www\assets\img\ootb-nsd-driver-experience.webp"/><file name="www\assets\img\ootb-nsd-ops-experience.webp"/><file name="www\assets\img\ootb-nsd-overlay-experience.webp"/><file name="www\assets\img\ootb-nsd-rewards-experience.webp"/><file name="www\assets\img\ootb-nwd-discovery-experience.webp"/><file name="www\assets\img\ootb-nwd-driver-experience.webp"/><file name="www\assets\img\ootb-nwd-ops-experience.webp"/><file name="www\assets\img\ootb-nwd-overlay-experience.webp"/><file name="www\assets\img\optimus.svg"/><file name="www\assets\img\overlay.svg"/><file name="www\assets\img\portrait.svg"/><file name="www\assets\img\portrait_flipped.svg"/><file name="www\assets\img\rewards_fallback.svg"/><file name="www\assets\img\rewards_viewdetails_fallback.svg"/><file name="www\assets\img\rt_arrow.svg"/><file name="www\assets\img\Select_All_24.svg"/><file name="www\assets\img\TV.svg"/><file name="www\assets\img\USB.svg"/><file name="www\assets\img\VGA.svg"/><file name="www\assets\img\wifi_off.svg"/><file name="www\assets\img\wrench_icon.svg"/><file name="www\assets\search-content\graphics-content.json"/><file name="www\assets\search-content\reward-content.json"/><file name="www\assets\search-content\settings-content.json"/><file name="www\assets\search-content\system-content.json"/></manifest>
+	<extensions>
+		<extension file="NvAppExt.dll"/>
+	</extensions>
+	<phases>
+		<custom phase="DisableCEFLaunch" action="DisableCEFLaunch" when="install" onError="ignore"/>
+		<standard phase="createCrashDumpGenerationKeys">
+			<addRegistry keyName="${{crashDumpKey}}\${{NvAppExeName}}"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{NvAppExeName}}" valueName="DumpFolder" type="REG_EXPAND_SZ" value="%PROGRAMDATA%\NVIDIA Corporation\CrashDumps"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{NvAppExeName}}" valueName="DumpCount" type="REG_DWORD" value="15"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{NvAppExeName}}" valueName="DumpType" type="REG_DWORD" value="1"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{NvAppPermisionExeName}}"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{NvAppPermisionExeName}}" valueName="DumpFolder" type="REG_EXPAND_SZ" value="%PROGRAMDATA%\NVIDIA Corporation\CrashDumps"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{NvAppPermisionExeName}}" valueName="DumpCount" type="REG_DWORD" value="15"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{NvAppPermisionExeName}}" valueName="DumpType" type="REG_DWORD" value="1"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{ShareExeName}}"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{ShareExeName}}" valueName="DumpFolder" type="REG_EXPAND_SZ" value="%PROGRAMDATA%\NVIDIA Corporation\CrashDumps"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{ShareExeName}}" valueName="DumpCount" type="REG_DWORD" value="15"/>
+			<addRegistry keyName="${{crashDumpKey}}\${{ShareExeName}}" valueName="DumpType" type="REG_DWORD" value="1"/>
+		</standard>
+		<standard phase="disableDriverUpdate" condition="{903C42F4-B7C6-4AB0-9F4D-51DBAC8E21BB}">
+			<addRegistry keyName="${{NvAppGlobalRegKey}}" valueName="NotifyNewDisplayUpdates" type="REG_DWORD" value="0"/>
+		</standard>
+		<standard phase="setCRDDefault" condition="{F0E91322-E43E-4FD4-9D53-BEB683DEF7FA}">
+			<addRegistry keyName="${{NvAppGlobalRegKey}}" valueName="DefaultCRD" type="REG_DWORD" value="1"/>
+		</standard>
+		<exe phase="killNvAppContainerEXE" name="${{SystemDirectory}}\taskkill.exe" when="install" onError="ignore">
+			<arg value="/f /t /im NvAppContainer.exe" quote="none"/>
+		</exe>
+		<standard phase="deleteNvAppPackageDir" when="install">
+			<deleteFile target="${{InstallLocation}}\*.*"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\CEF"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\www"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\osc"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\Plugins"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\NvLocalizedConfig"/>
+		</standard>
+		<standard phase="deleteNvContainerTelemetry" when="install" onError="ignore">
+			<deleteFile target="${{NvidiaProgramFiles}}\NvContainer\NvContainerTelemetryApi.dll"/>
+		</standard>
+		<setPropertyIf phase="checkIfDeleteOldUpdateFrameworkDir" boolProperty="deleteOldUpdateFrameworkLocation" value="true" when="install">
+			<directory name="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\_deleteOldUpdateFrameworkLocation" check="exists"/>
+		</setPropertyIf>
+		<standard phase="deleteLegacyUpdateFrameworkDir" when="install" onError="ignore" condition="deleteOldUpdateFrameworkLocation || !Global:SelfUpdate">
+			<deleteDirectoryTree target="${{CommonAppData}}\NVIDIA Corporation\NvApp-UpdateFramework"/>
+		</standard>
+		<standard phase="copyUpdateFrameworkFiles">
+			<copyFile source="CEF\UpdateFrameworkPlugins\UpdateFrameworkPlugin.dll" target="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}\UpdateFramework\plugins\UpdateFrameworkPlugin.dll"/>
+			<copyFile source="CEF\UpdateFrameworkPlugins\component_profiles.json" target="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}\UpdateFramework\profile-catalog\component_profiles.json"/>
+		</standard>
+		<custom phase="customCopyDirectory" action="CustomCopyDirectory" when="install">
+			<properties>
+				<string name="source" value="${{SubPackageDirectory}}"/>
+				<string name="destination" value="${{InstallLocation}}"/>
+				<string name="exceptionList" value="NvApp.nvi##NvAppExt.dll##NvGFTrayPlugin32.dll##NvGFTrayPlugin64.dll##NvGFTrayPluginr32.dll##NvGFTrayPluginr64.dll##EULA.txt##NvConfigGenerator.dll##${{NvCacheCleanupBinaryName}}##FunctionalConsent_cs-CZ.txt##FunctionalConsent_da-DK.txt##FunctionalConsent_de-DE.txt##FunctionalConsent_el-GR.txt##FunctionalConsent_en-US.txt##FunctionalConsent_en-GB.txt##FunctionalConsent_es-ES.txt##FunctionalConsent_es-MX.txt##FunctionalConsent_fi-FI.txt##FunctionalConsent_fr-FR.txt##FunctionalConsent_hu-HU.txt##FunctionalConsent_it-IT.txt##FunctionalConsent_ja-JP.txt##FunctionalConsent_ko-KR.txt##FunctionalConsent_nl-NL.txt##FunctionalConsent_nb-NO.txt##FunctionalConsent_pl-PL.txt##FunctionalConsent_pt-PT.txt##FunctionalConsent_pt-BR.txt##FunctionalConsent_ru-RU.txt##FunctionalConsent_sk-SK.txt##FunctionalConsent_sl-SI.txt##FunctionalConsent_sv-SE.txt##FunctionalConsent_th-TH.txt##FunctionalConsent_tr-TR.txt##FunctionalConsent_zh-CHS.txt##FunctionalConsent_zh-CHT.txt##FunctionalConsent_uk-UA.txt##PrivacyPolicy\PrivacyPolicy_cs-CZ.htm##PrivacyPolicy\PrivacyPolicy_da-DK.htm##PrivacyPolicy\PrivacyPolicy_de-DE.htm##PrivacyPolicy\PrivacyPolicy_el-GR.htm##PrivacyPolicy\PrivacyPolicy_en-US.htm##PrivacyPolicy\PrivacyPolicy_en-GB.htm##PrivacyPolicy\PrivacyPolicy_es-ES.htm##PrivacyPolicy\PrivacyPolicy_es-MX.htm##PrivacyPolicy\PrivacyPolicy_fi-FI.htm##PrivacyPolicy\PrivacyPolicy_fr-FR.htm##PrivacyPolicy\PrivacyPolicy_hu-HU.htm##PrivacyPolicy\PrivacyPolicy_it-IT.htm##PrivacyPolicy\PrivacyPolicy_ja-JP.htm##PrivacyPolicy\PrivacyPolicy_ko-KR.htm##PrivacyPolicy\PrivacyPolicy_nl-NL.htm##PrivacyPolicy\PrivacyPolicy_nb-NO.htm##PrivacyPolicy\PrivacyPolicy_pl-PL.htm##PrivacyPolicy\PrivacyPolicy_pt-PT.htm##PrivacyPolicy\PrivacyPolicy_pt-BR.htm##PrivacyPolicy\PrivacyPolicy_ru-RU.htm##PrivacyPolicy\PrivacyPolicy_sk-SK.htm##PrivacyPolicy\PrivacyPolicy_sl-SI.htm##PrivacyPolicy\PrivacyPolicy_sv-SE.htm##PrivacyPolicy\PrivacyPolicy_th-TH.htm##PrivacyPolicy\PrivacyPolicy_tr-TR.htm##PrivacyPolicy\PrivacyPolicy_zh-CHS.htm##PrivacyPolicy\PrivacyPolicy_zh-CHT.htm##PrivacyPolicy\PrivacyPolicy_uk-UA.htm##CEF\UpdateFrameworkPlugins\component_profiles.json##CEF\UpdateFrameworkPlugins\UpdateFrameworkPlugin.dll##CEF\config\messagebus.conf##CEF\config\DesktopNotification.json##CEF\NvLocalizedConfig\NvLocalizedConfig.json##CEF\NvLocalizedConfig\NvLocalizedConfig.dll##CEF\NvLocalizedConfig\NvLocalizedConfig.conf##UpgradeConsent\NvApp_upgrade_text_0404.txt##UpgradeConsent\NvApp_upgrade_text_0405.txt##UpgradeConsent\NvApp_upgrade_text_0406.txt##UpgradeConsent\NvApp_upgrade_text_0407.txt##UpgradeConsent\NvApp_upgrade_text_0408.txt##UpgradeConsent\NvApp_upgrade_text_0409.txt##UpgradeConsent\NvApp_upgrade_text_040a.txt##UpgradeConsent\NvApp_upgrade_text_040b.txt##UpgradeConsent\NvApp_upgrade_text_040c.txt##UpgradeConsent\NvApp_upgrade_text_040e.txt##UpgradeConsent\NvApp_upgrade_text_0410.txt##UpgradeConsent\NvApp_upgrade_text_0411.txt##UpgradeConsent\NvApp_upgrade_text_0412.txt##UpgradeConsent\NvApp_upgrade_text_0413.txt##UpgradeConsent\NvApp_upgrade_text_0414.txt##UpgradeConsent\NvApp_upgrade_text_0415.txt##UpgradeConsent\NvApp_upgrade_text_0416.txt##UpgradeConsent\NvApp_upgrade_text_0419.txt##UpgradeConsent\NvApp_upgrade_text_041b.txt##UpgradeConsent\NvApp_upgrade_text_041d.txt##UpgradeConsent\NvApp_upgrade_text_041e.txt##UpgradeConsent\NvApp_upgrade_text_041f.txt##UpgradeConsent\NvApp_upgrade_text_0804.txt##UpgradeConsent\NvApp_upgrade_text_0809.txt##UpgradeConsent\NvApp_upgrade_text_080a.txt##UpgradeConsent\NvApp_upgrade_text_0816.txt##UpgradeConsent\NvApp_upgrade_text_0422.txt##UpgradeConsent\NvApp_upgrade_text_0424.txt##EULA\EULA_cs-CZ.html##EULA\EULA_da-DK.html##EULA\EULA_de-DE.html##EULA\EULA_el-GR.html##EULA\EULA_en-GB.html##EULA\EULA_en-US.html##EULA\EULA_es-ES.html##EULA\EULA_es-MX.html##EULA\EULA_fi-FI.html##EULA\EULA_fr-FR.html##EULA\EULA_hu-HU.html##EULA\EULA_it-IT.html##EULA\EULA_ja-JP.html##EULA\EULA_ko-KR.html##EULA\EULA_nb-NO.html##EULA\EULA_nl-NL.html##EULA\EULA_pl-PL.html##EULA\EULA_pt-BR.html##EULA\EULA_pt-PT.html##EULA\EULA_ru-RU.html##EULA\EULA_sk-SK.html##EULA\EULA_sl-SI.html##EULA\EULA_sv-SE.html##EULA\EULA_th-TH.html##EULA\EULA_tr-TR.html##EULA\EULA_uk-UA.html##EULA\EULA_zh-CHS.html##EULA\EULA_zh-CHT.html##"/>
+			</properties>
+		</custom>
+		<standard phase="copyEULAFile">
+			<copyFile source="EULA.txt" target="${{EulaInstallLocationValue}}\EULA.txt"/>
+		</standard>
+		<standard phase="copyFunctionalConsentFiles">
+			<copyFile source="FunctionalConsent_cs-CZ.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_cs-CZ.txt"/>
+			<copyFile source="FunctionalConsent_da-DK.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_da-DK.txt"/>
+			<copyFile source="FunctionalConsent_de-DE.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_de-DE.txt"/>
+			<copyFile source="FunctionalConsent_el-GR.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_el-GR.txt"/>
+			<copyFile source="FunctionalConsent_en-US.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_en-US.txt"/>
+			<copyFile source="FunctionalConsent_en-GB.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_en-GB.txt"/>
+			<copyFile source="FunctionalConsent_es-ES.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_es-ES.txt"/>
+			<copyFile source="FunctionalConsent_es-MX.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_es-MX.txt"/>
+			<copyFile source="FunctionalConsent_fi-FI.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_fi-FI.txt"/>
+			<copyFile source="FunctionalConsent_fr-FR.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_fr-FR.txt"/>
+			<copyFile source="FunctionalConsent_hu-HU.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_hu-HU.txt"/>
+			<copyFile source="FunctionalConsent_it-IT.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_it-IT.txt"/>
+			<copyFile source="FunctionalConsent_ja-JP.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_ja-JP.txt"/>
+			<copyFile source="FunctionalConsent_ko-KR.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_ko-KR.txt"/>
+			<copyFile source="FunctionalConsent_nl-NL.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_nl-NL.txt"/>
+			<copyFile source="FunctionalConsent_nb-NO.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_nb-NO.txt"/>
+			<copyFile source="FunctionalConsent_pl-PL.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_pl-PL.txt"/>
+			<copyFile source="FunctionalConsent_pt-PT.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_pt-PT.txt"/>
+			<copyFile source="FunctionalConsent_pt-BR.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_pt-BR.txt"/>
+			<copyFile source="FunctionalConsent_ru-RU.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_ru-RU.txt"/>
+			<copyFile source="FunctionalConsent_sk-SK.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_sk-SK.txt"/>
+			<copyFile source="FunctionalConsent_sl-SI.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_sl-SI.txt"/>
+			<copyFile source="FunctionalConsent_sv-SE.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_sv-SE.txt"/>
+			<copyFile source="FunctionalConsent_th-TH.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_th-TH.txt"/>
+			<copyFile source="FunctionalConsent_tr-TR.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_tr-TR.txt"/>
+			<copyFile source="FunctionalConsent_zh-CHS.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_zh-CN.txt"/>
+			<copyFile source="FunctionalConsent_zh-CHT.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_zh-TW.txt"/>
+			<copyFile source="FunctionalConsent_uk-UA.txt" target="${{EulaInstallLocationValue}}\FunctionalConsent_uk-UA.txt"/>
+		</standard>
+		<standard phase="copyPrivacyPolicyFiles">
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_cs-CZ.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_cs-CZ.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_da-DK.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_da-DK.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_de-DE.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_de-DE.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_el-GR.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_el-GR.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_en-US.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_en-US.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_en-GB.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_en-GB.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_es-ES.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_es-ES.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_es-MX.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_es-MX.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_fi-FI.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_fi-FI.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_fr-FR.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_fr-FR.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_hu-HU.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_hu-HU.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_it-IT.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_it-IT.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_ja-JP.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_ja-JP.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_ko-KR.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_ko-KR.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_nl-NL.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_nl-NL.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_nb-NO.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_nb-NO.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_pl-PL.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_pl-PL.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_pt-PT.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_pt-PT.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_pt-BR.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_pt-BR.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_ru-RU.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_ru-RU.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_sk-SK.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_sk-SK.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_sl-SI.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_sl-SI.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_sv-SE.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_sv-SE.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_th-TH.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_th-TH.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_tr-TR.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_tr-TR.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_zh-CHS.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_zh-CN.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_zh-CHT.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_zh-TW.htm"/>
+			<copyFile source="PrivacyPolicy/PrivacyPolicy_uk-UA.htm" target="${{EulaInstallLocationValue}}\PrivacyPolicy\PrivacyPolicy_uk-UA.htm"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\PrivacyPolicy"/>
+		</standard>
+		<standard phase="createJunctionPoint">
+			<createDirectory target="${{NvidiaProgramFiles}}\NvContainer\plugins\user\${{AppFolder}}" source="${{InstallLocation}}\Plugins\localuser" symLink="true"/>
+			<createDirectory target="${{NvidiaProgramFiles}}\NvContainer\plugins\session\${{AppFolder}}" source="${{InstallLocation}}\Plugins\session" symLink="true"/>
+		</standard>
+		<standard phase="deleteEULAFolder" when="install">
+			<deleteDirectoryTree target="${{InstallLocation}}\EULA"/>
+		</standard>
+		<standard phase="deleteUpgradeConsentFolder" when="install">
+			<deleteDirectoryTree target="${{InstallLocation}}\UpgradeConsent"/>
+		</standard>
+		<standard phase="SetNVUpdateInstalledValueToZero" when="install">
+			<addRegistry keyName="${{NvidiaSoftwareKey}}\Global\nvUpdate" valueName="Installed" type="REG_DWORD" value="0"/>
+		</standard>
+		<standard phase="createLocalUserPluginsDirectory">
+			<createDirectory target="${{InstallLocation}}\Plugins\localuser"/>
+		</standard>
+		<exe phase="genDesktopNotificationCfg" name="${{SystemDirectory}}\Rundll32.exe" dir="${{SystemDirectory}}" when="install">
+			<arg value="${{NvConfigDllPath}}"/>
+			<arg value=",GenerateConfigs" quote="none"/>
+			<arg value="PACKAGE_ID|${{NvContainerSuffixId}};SOURCE|${{SubPackageDirectory}}\CEF\config\DesktopNotification.json;TARGET|${{InstallLocation}}\Plugins\localuser\NvApp\DesktopNotification.json;NVCONTAINER_INSTALL_ROOT|${{InstallLocation}}\CEF\dependencies" quote="normal"/>
+		</exe>
+		<exe phase="genDownloaderCfg" name="${{SystemDirectory}}\Rundll32.exe" dir="${{SystemDirectory}}" when="install">
+			<arg value="${{NvConfigDllPath}}"/>
+			<arg value=",GenerateConfigs" quote="none"/>
+			<arg value="PACKAGE_ID|${{NvContainerSuffixId}};SOURCE|${{SubPackageDirectory}}\CEF\config\Downloader.json;TARGET|${{InstallLocation}}\Plugins\localuser\NvApp\Downloader.json;NVCONTAINER_INSTALL_ROOT|${{InstallLocation}}\CEF\dependencies" quote="normal"/>
+		</exe>
+		<exe phase="genDiagnosticsCfg" name="${{SystemDirectory}}\Rundll32.exe" dir="${{SystemDirectory}}" when="install">
+			<arg value="${{NvConfigDllPath}}"/>
+			<arg value=",GenerateConfigs" quote="none"/>
+			<arg value="PACKAGE_ID|${{NvContainerSuffixId}};SOURCE|${{SubPackageDirectory}}\CEF\config\Diagnostics.json;TARGET|${{InstallLocation}}\Plugins\localuser\NvApp\Diagnostics.json;NVCONTAINER_INSTALL_ROOT|${{InstallLocation}}\CEF\dependencies" quote="normal"/>
+		</exe>
+		<exe phase="genNvAccountCfg" name="${{SystemDirectory}}\Rundll32.exe" dir="${{SystemDirectory}}" when="install">
+			<arg value="${{NvConfigDllPath}}"/>
+			<arg value=",GenerateConfigs" quote="none"/>
+			<arg value="PACKAGE_ID|${{NvContainerSuffixId}};SOURCE|${{SubPackageDirectory}}\CEF\config\NvAccount.json;TARGET|${{InstallLocation}}\Plugins\localuser\NvAccount.json;NVCONTAINER_INSTALL_ROOT|${{InstallLocation}}\CEF\dependencies" quote="normal"/>
+		</exe>
+		<exe phase="genOverClockingCfg" name="${{SystemDirectory}}\Rundll32.exe" dir="${{SystemDirectory}}" when="install">
+			<arg value="${{NvConfigDllPath}}"/>
+			<arg value=",GenerateConfigs" quote="none"/>
+			<arg value="PACKAGE_ID|${{NvContainerSuffixId}};SOURCE|${{SubPackageDirectory}}\CEF\config\_OverClockingNvc.json;TARGET|${{InstallLocation}}\Plugins\oc\_OverClockingNvc.json;NVCONTAINER_INSTALL_ROOT|${{InstallLocation}}\CEF\dependencies" quote="normal"/>
+		</exe>
+		<standard phase="copyNvLocalizedConfigFiles">
+			<copyFile source="CEF\NvLocalizedConfig\NvLocalizedConfig.dll" target="${{InstallLocation}}\NvLocalizedConfig\NvLocalizedConfig.dll"/>
+			<createDirectory target="${{LocalSystemPluginsDirectory}}\NvTelemetry\NvLocalizedConfig" source="${{InstallLocation}}\NvLocalizedConfig\" symLink="true"/>
+		</standard>
+		<exe phase="genNvLocalizedConfigModuleMap" name="${{SystemDirectory}}\Rundll32.exe" dir="${{SystemDirectory}}" when="install">
+			<arg value="${{NvConfigDllPath}}"/>
+			<arg value=",GenerateConfigs" quote="none"/>
+			<arg value="PACKAGE_ID|${{NvContainerSuffixId}};SOURCE|${{SubPackageDirectory}}\CEF\config\NvLocalizedConfig.json;TARGET|${{InstallLocation}}\NvLocalizedConfig\NvLocalizedConfig.json;NVCONTAINER_INSTALL_ROOT|${{InstallLocation}}\CEF\dependencies" quote="normal"/>
+		</exe>
+		<exe phase="genNvLocalizedConfigPluginConf" name="${{SystemDirectory}}\Rundll32.exe" dir="${{SystemDirectory}}" when="install">
+			<arg value="${{NvConfigDllPath}}"/>
+			<arg value=",GenerateConfigs" quote="none"/>
+			<arg value="PACKAGE_ID|${{NvContainerSuffixId}};SOURCE|${{SubPackageDirectory}}\CEF\NvLocalizedConfig\NvLocalizedConfig.conf;TARGET|${{InstallLocation}}\NvLocalizedConfig\NvLocalizedConfig.conf;PRODUCT_INSTALL_ROOT|${{InstallLocation}}" quote="normal"/>
+		</exe>
+		<exe phase="genNvDriverDiagnosticsCfg" name="${{SystemDirectory}}\Rundll32.exe" dir="${{SystemDirectory}}" when="install">
+			<arg value="${{NvConfigDllPath}}"/>
+			<arg value=",GenerateConfigs" quote="none"/>
+			<arg value="PACKAGE_ID|${{NvContainerSuffixId}};SOURCE|${{SubPackageDirectory}}\CEF\config\NvDriverDiagnostics.json;TARGET|${{InstallLocation}}\Plugins\session\NvDriverDiagnostics.json;NVCONTAINER_INSTALL_ROOT|${{InstallLocation}}\CEF\dependencies" quote="normal"/>
+		</exe>
+		<setPropertyIf phase="CheckIfExpandedConfigsPresent" boolProperty="ExpandedConfigsPresent" value="true" when="install">
+			<file name="${{InstallLocation}}\Plugins\localuser\NvApp\DesktopNotification.json" check="exists"/>
+			<file name="${{InstallLocation}}\Plugins\localuser\NvApp\Downloader.json" check="exists"/>
+			<file name="${{InstallLocation}}\Plugins\localuser\NvApp\Diagnostics.json" check="exists"/>
+			<file name="${{InstallLocation}}\Plugins\localuser\NvAccount.json" check="exists"/>
+			<file name="${{InstallLocation}}\Plugins\oc\_OverClockingNvc.json" check="exists"/>
+			<file name="${{InstallLocation}}\NvLocalizedConfig\NvLocalizedConfig.json" check="exists"/>
+			<file name="${{InstallLocation}}\NvLocalizedConfig\NvLocalizedConfig.conf" check="exists"/>
+			<file name="${{InstallLocation}}\Plugins\session\NvDriverDiagnostics.json" check="exists"/>
+		</setPropertyIf>
+		<confirm phase="ConfirmExpandedConfigsPresent" when="install">
+			<propertyTrue name="ExpandedConfigsPresent"/>
+		</confirm>
+		<standard phase="deleteEmptyNvLocalizedConfigDirectory">
+			<deleteDirectoryTree target="${{InstallLocation}}\CEF\NvLocalizedConfig"/>
+		</standard>
+		<standard phase="createMessageBusRouterForOverlay" when="install">
+			<copyFile source="${{InstallLocation}}\CEF\PlugIns\${{AppFolder}}\MessageBusRouter.dll" target="${{InstallLocation}}\CEF\PlugIns\NVIDIA Overlay\MessageBusRouter.dll" symLink="true"/>
+		</standard>
+		<standard phase="addRegistryForEmailRedirection">
+			<addRegistry keyName="${{EmailRedirectionRegistry}}" type="REG_SZ" valueName="" value="&quot;URL:nvidiaapp Protocol&quot;"/>
+			<addRegistry keyName="${{EmailRedirectionRegistry}}" type="REG_SZ" valueName="URL Protocol" value=""/>
+			<addRegistry keyName="${{EmailRedirectionRegistry}}\DefaultIcon" type="REG_SZ" valueName="" value="${{NvAppExeName}}"/>
+			<addRegistry keyName="${{EmailRedirectionRegistry}}\Shell\Open\Command" type="REG_SZ" valueName="" value="&quot;${{NvAppExePath}}&quot; &quot;%1&quot;"/>
+		</standard>
+		<standard phase="deleteRenamedFiles" when="install" onError="ignore">
+			<deleteFile target="${{InstallLocation}}\CEF\PlugIns\${{AppFolder}}\Downloader.dll"/>
+		</standard>
+		<standard phase="cleanUpRegKey" when="uninstall" onError="ignore">
+			<deleteRegistryKeyTree keyName="${{NvAppGlobalRegKey}}"/>
+		</standard>
+		<standard phase="deleteAll" when="uninstall">
+			<deleteFile target="${{InstallLocation}}\*.*"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\Plugins"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\CEF"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\www"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\osc"/>
+			<deleteDirectoryTree target="${{InstallLocation}}\NvLocalizedConfig"/>
+			<deleteDirectoryTree target="${{NvAppLogDirPath}}"/>
+			<deleteDirectoryTree target="${{CommonAppData}}\NVIDIA Corporation\NvApp-UpdateFramework"/>
+			<deleteDirectoryTree target="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}"/>
+			<deleteDirectoryTree target="${{TempLocation}}"/>
+			<deleteDirectoryTree target="${{CommonAppData}}\NVIDIA Corporation\Downloader"/>
+		</standard>
+		<exe phase="UnInstallLoginId" name="${{SystemDirectory}}\Rundll32.exe" dir="${{LoginIdTempLocation}}" when="uninstall" wait="false">
+			<arg value="${{LoginIdTempLocation}}\LoginId.dll"/>
+			<arg value=",UnInstall" quote="none"/>
+			<arg value="nvapp" quote="normal"/>
+		</exe>
+		<standard phase="setupLoginIdBinaries" when="uninstall">
+			<copyFile source="${{InstallLocation}}\CEF\PlugIns\${{AppFolder}}\LoginId.dll" target="${{LoginIdTempLocation}}\LoginId.dll"/>
+			<copyFile source="${{InstallLocation}}\CEF\dependencies\CrimsonUtil.dll" target="${{LoginIdTempLocation}}\CrimsonUtil.dll"/>
+		</standard>
+		<exe phase="copyNvAppClientLogs" name="${{SystemDirectory}}\robocopy.exe" when="uninstall" condition="Global:RetainLogs" onError="ignore">
+			<arg value="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}"/>
+			<arg value="${{LocalUserAppData}}\NVIDIA Corporation\RetainedLogs\NvAppClient"/>
+			<arg value="/S"/>
+			<arg value="/R:0"/>
+			<arg value="/W:0"/>
+			<arg value="/NFL"/>
+			<arg value="/NDL"/>
+			<arg value="/NJH"/>
+			<arg value="/NJS"/>
+			<success value="0"/>
+			<success value="1"/>
+			<success value="2"/>
+			<success value="3"/>
+		</exe>
+		<exe phase="copyGfeSDKLogs" name="${{SystemDirectory}}\robocopy.exe" when="uninstall" condition="Global:RetainLogs" onError="ignore">
+			<arg value="${{LocalUserAppData}}\NVIDIA Corporation\GfeSDK"/>
+			<arg value="${{LocalUserAppData}}\NVIDIA Corporation\RetainedLogs\GfeSDK"/>
+			<arg value="/S"/>
+			<arg value="/R:0"/>
+			<arg value="/W:0"/>
+			<arg value="/NFL"/>
+			<arg value="/NDL"/>
+			<arg value="/NJH"/>
+			<arg value="/NJS"/>
+			<success value="0"/>
+			<success value="1"/>
+			<success value="2"/>
+			<success value="3"/>
+		</exe>
+		<exe phase="copyNvTelemetryLogs" name="${{SystemDirectory}}\robocopy.exe" when="uninstall" condition="Global:RetainLogs" onError="ignore">
+			<arg value="${{CommonAppData}}\NVIDIA Corporation\NvTelemetry"/>
+			<arg value="${{LocalUserAppData}}\NVIDIA Corporation\RetainedLogs\NvTelemetry"/>
+			<arg value="/S"/>
+			<arg value="/R:0"/>
+			<arg value="/W:0"/>
+			<arg value="/NFL"/>
+			<arg value="/NDL"/>
+			<arg value="/NJH"/>
+			<arg value="/NJS"/>
+			<success value="0"/>
+			<success value="1"/>
+			<success value="2"/>
+			<success value="3"/>
+		</exe>
+		<exe phase="copyNvAppInstallerLogs" name="${{SystemDirectory}}\robocopy.exe" when="uninstall" condition="Global:RetainLogs" onError="ignore">
+			<arg value="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}\Installer"/>
+			<arg value="${{LocalUserAppData}}\NVIDIA Corporation\RetainedLogs\NvAppInstaller"/>
+			<arg value="/S"/>
+			<arg value="/R:0"/>
+			<arg value="/W:0"/>
+			<arg value="/NFL"/>
+			<arg value="/NDL"/>
+			<arg value="/NJH"/>
+			<arg value="/NJS"/>
+			<success value="0"/>
+			<success value="1"/>
+			<success value="2"/>
+			<success value="3"/>
+		</exe>
+		<exe phase="copyNvContainerLogs" name="${{SystemDirectory}}\robocopy.exe" when="uninstall" condition="Global:RetainLogs" onError="ignore">
+			<arg value="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}\NvContainer"/>
+			<arg value="${{LocalUserAppData}}\NVIDIA Corporation\RetainedLogs\NvContainer"/>
+			<arg value="/S"/>
+			<arg value="/R:0"/>
+			<arg value="/W:0"/>
+			<arg value="/NFL"/>
+			<arg value="/NDL"/>
+			<arg value="/NJH"/>
+			<arg value="/NJS"/>
+			<success value="0"/>
+			<success value="1"/>
+			<success value="2"/>
+			<success value="3"/>
+		</exe>
+		<exe phase="copyMessageBusLogs" name="${{SystemDirectory}}\robocopy.exe" when="uninstall" condition="Global:RetainLogs" onError="ignore">
+			<arg value="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}\MessageBus"/>
+			<arg value="${{LocalUserAppData}}\NVIDIA Corporation\RetainedLogs\MessageBus"/>
+			<arg value="/S"/>
+			<arg value="/R:0"/>
+			<arg value="/W:0"/>
+			<arg value="/NFL"/>
+			<arg value="/NDL"/>
+			<arg value="/NJH"/>
+			<arg value="/NJS"/>
+			<success value="0"/>
+			<success value="1"/>
+			<success value="2"/>
+			<success value="3"/>
+		</exe>
+		<exe phase="copyAppFolderFiles" name="${{SystemDirectory}}\robocopy.exe" when="uninstall" condition="Global:RetainLogs" onError="ignore">
+			<arg value="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}"/>
+			<arg value="${{LocalUserAppData}}\NVIDIA Corporation\RetainedLogs\NvAppClient"/>
+			<arg value="/LEV:1"/>
+			<arg value="/R:0"/>
+			<arg value="/W:0"/>
+			<arg value="/NFL"/>
+			<arg value="/NDL"/>
+			<arg value="/NJH"/>
+			<arg value="/NJS"/>
+			<success value="0"/>
+			<success value="1"/>
+			<success value="2"/>
+			<success value="3"/>
+		</exe>
+		<standard phase="moveLogs" when="uninstall" condition="Global:RetainLogs">
+			<deleteDirectoryTree target="${{LocalUserAppData}}\NVIDIA Corporation\RetainedLogs"/>
+			<createDirectory target="${{LocalUserAppData}}\NVIDIA Corporation\RetainedLogs"/>
+		</standard>
+		<standard phase="deleteLegacyShortcuts" when="install" onError="ignore">
+			<deleteShortcutLink location="desktop" linkName="NVIDIA"/>
+			<deleteShortcutLink location="startMenu" linkGroup="NVIDIA Corporation" linkName="NVIDIA"/>
+		</standard>
+		<custom phase="checkIfDesktopShortcutExists" action="CheckIfDesktopShortcutExists" when="install" onError="ignore">
+			<properties>
+				<string name="LinkName" value="${{baseTitle}}"/>
+			</properties>
+		</custom>
+		<standard phase="modifyDesktopShortcutIfExists" when="install" condition="DesktopShortcutExists" onError="ignore">
+			<createShortcutLink location="desktop" targetPath="${{NvAppExePath}}" linkName="${{baseTitle}}" startIn="${{InstallLocation}}" runAsAdmin="false" appUserModelId="${{UserModelString}}"/>
+		</standard>
+		<standard phase="createDesktopShortcut" when="installClose" condition="CreateDesktopShortcut" onError="ignore">
+			<createShortcutLink location="desktop" targetPath="${{NvAppExePath}}" linkName="${{baseTitle}}" startIn="${{InstallLocation}}" runAsAdmin="false" appUserModelId="${{UserModelString}}"/>
+		</standard>
+		<custom phase="decideDeleteDesktopShortcut" action="DecideDeleteDesktopShortcut" when="installClose" onError="ignore"/>
+		<standard phase="deleteDesktopShortcut" when="installClose" condition="DeleteDesktopShortcut" onError="ignore">
+			<deleteShortcutLink location="desktop" targetPath="${{NvAppExePath}}" linkName="${{baseTitle}}"/>
+		</standard>
+		<standard phase="CreateStartMenuShortcut" onError="ignore">
+			<createShortcutGroup location="startMenu" linkGroup="NVIDIA Corporation"/>
+			<createShortcutLink location="startMenu" targetPath="${{NvAppExePath}}" linkGroup="NVIDIA Corporation" linkName="${{baseTitle}}" startIn="${{InstallLocation}}" runAsAdmin="false" appUserModelId="${{UserModelString}}"/>
+		</standard>
+		<setPropertyIf phase="checkNvAppPresent" boolProperty="ShowReleaseHighlights" value="true" when="install">
+			<registryKey name="${{NvAppGlobalRegKey}}" value="Installed" check="exists"/>
+		</setPropertyIf>
+		<standard phase="deleteCorruptedTaskFiles" when="install" onError="ignore">
+			<deleteFile target="${{TasksPath}}\${{NvAppSelfUpdateTaskName}}${{taskGuid}}"/>
+		</standard>
+		<standard phase="createSelfUpdateScheduleTask" onError="ignore">
+			<scheduleTask action="create" taskName="${{NvAppSelfUpdateTaskName}}" triggerType="event" author="NVIDIA Corporation" processPath="&quot;${{NvAppExePath}}&quot;" eventLogSource="NVIDIA App SelfUpdate Source" runWithHighPrivileges="true" workingDirectory="${{InstallLocation}}"/>
+		</standard>
+		<if filter="64BitPlatform">
+			<standard phase="setInstalledValueToOne" platform="x86">
+				<addRegistry keyName="${{NvAppGlobalRegKey}}" valueName="Version" type="REG_SZ" value="${{ProductVersion}}"/>
+			</standard>
+		</if>
+		<if filter="64BitPlatform">
+			<standard phase="deleteBetaRegKey" when="install" platform="x86" onError="ignore">
+				<deleteRegistry keyName="${{NvAppGlobalRegKey}}" valueName="Beta"/>
+			</standard>
+		</if>
+		<standard phase="deleteBetaRegKey" when="install" onError="ignore">
+			<deleteRegistry keyName="${{NvAppGlobalRegKey}}" valueName="Beta"/>
+		</standard>
+		<if filter="32BitPackage">
+			<standard phase="addArchitectureRegKey" platform="x86">
+				<addRegistry keyName="${{NvAppGlobalRegKey}}" valueName="Architecture" type="REG_SZ" value="x86"/>
+			</standard>
+			<else>
+				<standard phase="addArchitectureRegKey" platform="x86">
+					<addRegistry keyName="${{NvAppGlobalRegKey}}" valueName="Architecture" type="REG_SZ" value="x64"/>
+				</standard>
+			</else>
+		</if>
+		<standard phase="selfUpdateSucess" when="install" onError="ignore" condition="Global:SelfUpdate">
+			<deleteFile target="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}\UpdateFramework\status\nvapp\nvAppUpdate.json"/>
+		</standard>
+		<standard phase="deleteDesktopShortcut" when="uninstall" onError="ignore">
+			<deleteShortcutLink location="desktop" linkName="${{baseTitle}}"/>
+		</standard>
+		<standard phase="deleteNVCRegKeys" when="uninstall" onError="ignore">
+			<deleteRegistryKeyTree keyName="${{NvidiaWOW6432NodePath}}\NvContainer\NvContainerLocalSystem"/>
+		</standard>
+		<setPropertyIf phase="checkIfLogsToBeRetained" boolProperty="Global:RetainLogs" value="true" when="uninstall">
+			<registryKey name="${{NvidiaWOW6432NodePath}}\retainNvAppLogsOnUninstall" check="exists"/>
+		</setPropertyIf>
+		<custom phase="ShutdownShadowPlayProcesses" action="ShutdownShadowPlayProcesses" when="uninstall"/>
+		<exe phase="killNvContainers" name="${{SystemDirectory}}\taskkill.exe" when="uninstall" onError="ignore">
+			<arg value="/f /t /im ${{ContainerBinaryName}}" quote="none"/>
+		</exe>
+		<standard phase="stopNvContainerLocalSystemService" when="uninstall" onError="ignore">
+			<stopService name="${{NvContainerLSName}}" timeOut="30000"/>
+		</standard>
+		<custom phase="ShutdownNvApp" action="ShutdownNvApp" when="uninstall"/>
+		<custom phase="DisableCEFLaunch" action="DisableCEFLaunch" when="uninstall" onError="ignore"/>
+		<standard phase="RestoreGFEData" condition="IsSettingsPersisted" when="install" onError="ignore">
+			<renameFile source="${{TempLocation}}\0\sharedstorage.json" target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\gfe_backup\sharedstorage.json"/>
+			<renameFile source="${{TempLocation}}\1\Highlights" target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\gfe_backup\Highlights"/>
+			<renameFile source="${{TempLocation}}\2\GfeSDK" target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\gfe_backup\GfeSDK"/>
+			<renameFile source="${{TempLocation}}\3\config.xml" target="${{CommonAppData}}\NVIDIA Corporation\${{AppFolder}}\NvBackend\config.xml"/>
+			<renameFile source="${{TempLocation}}\4\config.xml" target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\NvBackend\config.xml"/>
+			<renameFile source="${{TempLocation}}\5\nvapp.json" target="${{DownloaderSettingTargetFilePathValue}}"/>
+			<renameFile source="${{TempLocation}}\6\clientsettings.json" target="${{DownloaderSettingSourceFilePathValue}}"/>
+			<renameFile source="${{TempLocation}}\7\NVIDIA GeForce Experience" target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\gfe_backup\nvbackend"/>
+			<deleteDirectoryTree target="${{TempLocation}}"/>
+			<deleteDirectoryTree target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\gfe_backup\nvbackend\CefCache"/>
+		</standard>
+		<setPropertyIf phase="checkGFEDownloaderSettingFile" boolProperty="GFEDownloaderExists" onError="ignore" value="true" when="install">
+			<file name="${{DownloaderSettingSourceFilePathValue}}" check="exists"/>
+		</setPropertyIf>
+		<custom phase="persistDownloaderSettings" action="PersistDownloaderSettings" condition="GFEDownloaderExists" when="install" onError="ignore">
+			<properties>
+				<string name="DownloaderSettingSourceFilePath" value="${{DownloaderSettingSourceFilePathValue}}"/>
+				<string name="DownloaderSettingTargetFilePath" value="${{DownloaderSettingTargetFilePathValue}}"/>
+			</properties>
+		</custom>
+		<standard phase="deleteGFEdownloaderFile" condition="GFEDownloaderExists" when="install" onError="ignore">
+			<deleteFile target="${{DownloaderSettingSourceFilePathValue}}"/>
+		</standard>
+		<setPropertyIf phase="checkCEFData" boolProperty="CEFdefaultDirExists" value="true" when="install">
+			<directory name="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\CefCache\IndexedDB" check="exists"/>
+		</setPropertyIf>
+		<standard phase="RestoreCEFData" condition="CEFdefaultDirExists" when="install" onError="ignore">
+			<deleteDirectoryTree target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\CefCache\Default\IndexedDB"/>
+			<renameFile source="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\CefCache\IndexedDB" target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\CefCache\Default\IndexedDB"/>
+		</standard>
+		<standard phase="RestoreRegKeys" condition="IsSettingsPersisted" when="install" onError="ignore">
+			<editRegistry registryPath="${{NvidiaPerUserSoftwareKey}}\Global\ShadowPlay" currentKeyName="NVSPCAPS_GFE" newKeyName="NVSPCAPS"/>
+			<addRegistry keyName="${{NvidiaPerUserSoftwareKey}}\Global\ShadowPlay\NVSPCAPS" valueName="Gfe2NvAppMigration" type="REG_DWORD" value="1"/>
+			<editRegistry registryPath="${{NvidiaPerUserSoftwareKey}}\Global" currentKeyName="GFExperience_GFE" newKeyName="GFExperience"/>
+		</standard>
+		<standard phase="HandleSPMigration" condition="IsSettingsPersisted" when="install" onError="ignore">
+			<deleteRegistryKeyTree keyName="${{NvAppGlobalRegKey}}\ShadowPlay\FTS"/>
+			<deleteRegistry keyName="HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\NT\CurrentVersion\AppCompatFlags\Layers" valueName="${{InstallLocation}}\CEF\${{ShareExeName}}"/>
+			<deleteRegistry keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\NT\CurrentVersion\AppCompatFlags\Layers" valueName="${{InstallLocation}}\CEF\${{ShareExeName}}"/>
+		</standard>
+		<standard phase="cleanUpGFEDriverUpdatesNotification" when="uninstall" onError="ignore">
+			<deleteRegistryKeyTree keyName="HKEY_CURRENT_USER\SOFTWARE\NVIDIA Corporation\Global\GFExperience"/>
+		</standard>
+		<standard phase="setInstalledValueToOne">
+			<addRegistry keyName="${{NvAppGlobalRegKey}}" valueName="FullPath" type="REG_SZ" value="${{NvAppExePath}}"/>
+			<addRegistry keyName="${{NvAppGlobalRegKey}}" valueName="Installed" type="REG_DWORD" value="1"/>
+			<addRegistry keyName="${{NvAppGlobalRegKey}}" valueName="Version" type="REG_SZ" value="${{ProductVersion}}"/>
+		</standard>
+		<standard phase="DeleteInstallerErrorStatusFile" when="install">
+			<deleteFile target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\installerstatus.json"/>
+		</standard>
+		<standard phase="setDeleteOldUpdateFrameworkDir" when="install" condition="Global:SelfUpdate">
+			<createDirectory target="${{LocalUserAppData}}\NVIDIA Corporation\${{AppFolder}}\_deleteOldUpdateFrameworkLocation"/>
+		</standard>
+		<standard phase="createConsentFile" when="installClose" condition="!Global:SilentInstall &amp;&amp; !Global:OverrideConsentFeature" onError="ignore">
+			<copyFile source="EULA.txt" target="${{ConsentFilePath}}"/>
+		</standard>
+		<setPropertyIf phase="checkIfJpsThumbnailHandlerExists" boolProperty="JPSThumbnailHandlerExists" value="true" when="install">
+			<registryKey name="${{JPSThumbnailHandlerRegKey}}" check="exists"/>
+		</setPropertyIf>
+		<standard phase="createJPSthumbnailHandlerRegKey" condition="!JPSThumbnailHandlerExists">
+			<addRegistry keyName="${{JPSThumbnailHandlerRegKey}}" valueName="" type="REG_EXPAND_SZ" value="{C7657C4A-9F68-40fa-A4DF-96BC08EB3551}"/>
+		</standard>
+		<custom phase="EnableCEFLaunch" action="EnableCEFLaunch" when="installClose" onError="ignore"/>
+		<exe phase="runNvAppWithArgument" condition="LaunchNvApp &amp;&amp; ShowReleaseHighlights" when="installClose" name="${{NvAppExePath}}" dir="${{InstallLocation}}" flags="noelevate">
+			<arg value="nvidiaapp://route/#nvapp/releaseHighlights"/>
+		</exe>
+		<exe phase="runNvApp" condition="LaunchNvApp &amp;&amp; !ShowReleaseHighlights" when="installClose" name="${{NvAppExePath}}" dir="${{InstallLocation}}" flags="noelevate"/>
+		<standard phase="deleteConsentFile" when="uninstall" onError="ignore">
+			<deleteFile target="${{ConsentFilePath}}"/>
+		</standard>
+	</phases>
+	<finishOptions>
+		<option name="CreateDesktopShortcut" text="${{CreateDesktopShortcut}}" property="CreateDesktopShortcut" condition="!{F52330DB-1298-42DE-A9DD-CD1105C10FAA} &amp;&amp; !Global:NvAppInitiated"/>
+		<option name="LaunchNvApp" text="${{LaunchNvApp}}" property="LaunchNvApp" condition="LaunchNvApp &amp;&amp; !Global:NvAppInitiated"/>
+	</finishOptions>
+	<strings>
+		<localized locale="0x0409">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="ErrorOSNotSupported" value=" • ${{officialTitle}} requires Windows7 or later."/>
+			<string name="NotAnUpgradeMessage" value=" • A newer version is present."/>
+			<string name="Locale_ID" value="en-us"/>
+			<string name="NvGpuRequired" value=" • ${{officialTitle}} requires an NVIDIA GPU. Refer to the ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallSafeModeBlockedMessage" value=" • ${{officialTitle}} cannot be installed in safe mode."/>
+			<string name="SystemRequirements" value="system requirements"/>
+			<string name="InstallOptions" value="Installation options"/>
+			<string name="CreateDesktopShortcut" value="Create desktop shortcut for ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Launch ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIA Installer has paused"/>
+			<string name="UninstallerPaused" value="NVIDIA Uninstaller has paused"/>
+			<string name="CloseSteamInstall" value=" • ${{officialTitle}} cannot be installed while Steam is running. Click Next to quit Steam and continue."/>
+			<string name="CloseSteamUninstall" value=" • ${{officialTitle}} cannot be uninstalled while Steam is running. Click Next to quit Steam and continue."/>
+			<string name="IncompatiblePackageArchitecture" value=" • You are attempting to install a 64 bit package on a 32 bit system. Please obtain the 32 bit version of the installer package and try again."/>
+			<string name="BlockCrossOverInstall" value=" • To continue, remove ${{officialTitle}} from this system and try reinstalling this package."/>
+		</localized>
+		<localized locale="0x0401">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="ErrorOSNotSupported" value="يتطلب ${{officialTitle}} Windows7 أو الإصدار الأحدث منه."/>
+			<string name="NotAnUpgradeMessage" value="يوجد إصدار أحدث."/>
+			<string name="Locale_ID" value="ar-sa"/>
+			<string name="NvGpuRequired" value="يتطلب ${{officialTitle}} وحدة معالجة الرسوم NVIDIA. ارجع إلى ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallSafeModeBlockedMessage" value="لا يمكن تثبيت ${{officialTitle}} في وضع آمن."/>
+			<string name="SystemRequirements" value="متطلبات النظام"/>
+			<string name="InstallOptions" value="خيارات التثبيت"/>
+			<string name="CreateDesktopShortcut" value="إنشاء اختصار سطح المكتب لـ ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="تشغيل ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="توقفت أداة تثبيت NVIDIA مؤقتًا"/>
+			<string name="UninstallerPaused" value="توقفت أداة إلغاء تثبيت NVIDIA مؤقتًا"/>
+			<string name="CloseSteamInstall" value="لا يمكن تثبيت ${{officialTitle}} بينما Steam قيد التشغيل. انقر على التالي للخروج من Steam والمتابعة."/>
+			<string name="CloseSteamUninstall" value="لا يمكن إلغاء تثبيت ${{officialTitle}} بينما Steam قيد التشغيل. انقر على التالي للخروج من Steam والمتابعة."/>
+			<string name="IncompatiblePackageArchitecture" value="أنت تحاول تثبيت حزمة 64 بت على نظام 32 بت. الرجاء الحصول على إصدار 32 من حزمة أداة التثبيت والمحاولة مجددًا."/>
+			<string name="BlockCrossOverInstall" value="للمتابعة، قم بإزالة{{officialTitle}}$ من هذا النظام ومحاولة إعادة تثبيت هذه الحزمة."/>
+		</localized>
+		<localized locale="0x0405">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} nemůže být nainstalován v nouzovém režimu."/>
+			<string name="SystemRequirements" value="systémové požadavky"/>
+			<string name="Locale_ID" value="cs-cz"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} vyžaduje jednotku GPU NVIDIA. Viz ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Možnosti instalace"/>
+			<string name="CreateDesktopShortcut" value="Vytvořit zástupce na ploše pro ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Spustit ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Instalační aplikace NVIDIA byla přerušena"/>
+			<string name="UninstallerPaused" value="Odinstalační aplikace NVIDIA byla přerušena"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} nelze nainstalovat, pokud je spuštěna aplikace Steam. Kliknutím na tlačítko Další ukončíte aplikaci Steam a můžete pokračovat."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} nelze odinstalovat, pokud je spuštěna aplikace Steam. Kliknutím na tlačítko Další ukončíte aplikaci Steam a můžete pokračovat."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} vyžaduje Windows7 nebo novější."/>
+			<string name="NotAnUpgradeMessage" value="Zde je přítomna nová nebo stejná verze."/>
+			<string name="IncompatiblePackageArchitecture" value="Pokoušíte se nainstalovat 64bitovou verzi na 32bitový systém. Získejte 32bitovou verzi instalačního balíčku a zkuste to znovu."/>
+			<string name="BlockCrossOverInstall" value="Chcete-li pokračovat, odeberte ${{officialTitle}} z tohoto systému a zkuste tento balíček nainstalovat znovu."/>
+		</localized>
+		<localized locale="0x0406">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} kan ikke installeres i sikker tilstand."/>
+			<string name="SystemRequirements" value="systemkrav"/>
+			<string name="Locale_ID" value="da-dk"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} kræver en NVIDIA GPU. Se venligst ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Installationsvalg"/>
+			<string name="CreateDesktopShortcut" value="Opret skrivebordsgenvej for ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Start ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIA Installationsprogram er midlertidigt afbrudt"/>
+			<string name="UninstallerPaused" value="NVIDIA Afinstallationsprogram er midlertidigt afbrudt"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} kan ikke installeres, imens Steam kører. Klik på Næste for at afslutte Steam og fortsætte."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} kan ikke afinstalleres, imens Steam kører. Klik på Næste for at afslutte Steam og fortsætte."/>
+			<string name="NotAnUpgradeMessage" value="En nyere eller den samme version findes."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} kræver Windows7 eller senere."/>
+			<string name="IncompatiblePackageArchitecture" value="Du forsøger at installere en 64 bit-pakke på et 32 bit-system. Indhent 32 bit-versionen af installationspakken og prøv igen."/>
+			<string name="BlockCrossOverInstall" value="Fjern ${{officialTitle}} fra dette system og prøv at geninstallere denne pakke for at fortsætte."/>
+		</localized>
+		<localized locale="0x0407">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} kann im abgesicherten Modus nicht installiert werden."/>
+			<string name="SystemRequirements" value="Systemanforderungen"/>
+			<string name="Locale_ID" value="de-de"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} benötigt eine NVIDIA GPU. Zurück zur Seite ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Installationsoptionen"/>
+			<string name="CreateDesktopShortcut" value="Desktopverknüpfung für ${{officialTitle}} anlegen"/>
+			<string name="LaunchNvApp" value="Starten von ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Das NVIDIA Installationsprogramm hat angehalten"/>
+			<string name="UninstallerPaused" value="Das NVIDIA Deinstallationsprogramm hat angehalten"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} kann nicht installiert werden, während Steam läuft. Klicken Sie auf Weiter, um Steam zu beenden und fortzufahren."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} kann nicht deinstalliert werden, während Steam läuft. Klicken Sie auf Weiter, um Steam zu beenden und fortzufahren."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} benötigt Windows7 oder höher."/>
+			<string name="NotAnUpgradeMessage" value="Eine neuere oder dieselbe Version ist vorhanden."/>
+			<string name="IncompatiblePackageArchitecture" value="Sie versuchen, ein 64-Bit-Paket auf einem 32-Bit-System zu installieren. Bitte besorgen Sie sich die 32-Bit-Version des Installationspakets und versuchen Sie es erneut."/>
+			<string name="BlockCrossOverInstall" value="Um fortzufahren, entfernen Sie bitte ${{officialTitle}} von diesem System und versuchen Sie erneut, dieses Paket zu installieren."/>
+		</localized>
+		<localized locale="0x0408">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="Δεν είναι δυνατή η εγκατάσταση ${{officialTitle}} σε ασφαλή λειτουργία."/>
+			<string name="SystemRequirements" value="απαιτήσεις συστήματος"/>
+			<string name="Locale_ID" value="el-gr"/>
+			<string name="NvGpuRequired" value="Το ${{officialTitle}} απαιτεί NVIDIA GPU. Ανατρέξτε στις ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Επιλογές εγκατάστασης"/>
+			<string name="CreateDesktopShortcut" value="Δημιουργία συντόμευσης επιφάνειας εργασίας για ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Εκκίνηση ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Το πρόγραμμα εγκατάστασης NVIDIA τέθηκε σε παύση"/>
+			<string name="UninstallerPaused" value="Το πρόγραμμα κατάργησης εγκατάστασης NVIDIA τέθηκε σε παύση"/>
+			<string name="CloseSteamInstall" value="Δεν είναι δυνατό να εγκατασταθεί το ${{officialTitle}} ενώ εκτελείται το Steam. Κάντε κλικ στο Επόμενο για να τερματίσετε το Steam και συνεχίστε."/>
+			<string name="CloseSteamUninstall" value="Δεν είναι δυνατό να καταργηθεί η εγκατάσταση του ${{officialTitle}} ενώ εκτελείται το Steam. Κάντε κλικ στο Επόμενο για να τερματίσετε το Steam και συνεχίστε."/>
+			<string name="ErrorOSNotSupported" value="Το ${{officialTitle}} απαιτεί Windows7 ή μεταγενέστερο."/>
+			<string name="NotAnUpgradeMessage" value="Υπάρχει μια νεότερη ή η ίδια έκδοση."/>
+			<string name="IncompatiblePackageArchitecture" value="Προσπαθείτε να εγκαταστήσετε πακέτο 64 bit σε σύστημα 32 bit. Χρησιμοποιήστε την έκδοση 32 bit του πακέτου εγκατάστασης και προσπαθήστε ξανά. "/>
+			<string name="BlockCrossOverInstall" value="Για να συνεχίσετε, καταργήστε το ${{officialTitle}} από το σύστημα και προσπαθήστε να εγκαταστήσετε το πακέτο ξανά."/>
+		</localized>
+		<localized locale="0x040a">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} no puede instalarse en el modo seguro."/>
+			<string name="SystemRequirements" value="Requisitos del sistema"/>
+			<string name="Locale_ID" value="es-es"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} requiere una GPU NVIDIA. Consulte la página ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Opciones de instalación"/>
+			<string name="CreateDesktopShortcut" value="Crear acceso directo en el escritorio para ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Iniciar ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="El instalador de NVIDIA ha pausado"/>
+			<string name="UninstallerPaused" value="El desinstalador de NVIDIA ha pausado"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} no se puede instalar mientras se esté ejecutando Steam. Haga clic en Siguiente para cerrar Steam y continuar."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} no se puede desinstalar mientras se esté ejecutando Steam. Haga clic en Siguiente para cerrar Steam y continuar."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} requiere Windows7 o posterior."/>
+			<string name="NotAnUpgradeMessage" value="Este equipo ya cuenta con la misma versión o una más nueva."/>
+			<string name="IncompatiblePackageArchitecture" value="Está tratando de instalar un paquete de 64 bits en un sistema de 32 bits. Consiga la versión de 32 bits del paquete de instalación y vuelva a intentarlo."/>
+			<string name="BlockCrossOverInstall" value="Para continuar, elimine ${{officialTitle}} de este sistema e intente volver a instalar este paquete."/>
+		</localized>
+		<localized locale="0x080a">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} no puede instalarse en el modo seguro."/>
+			<string name="SystemRequirements" value="Requisitos del sistema"/>
+			<string name="Locale_ID" value="es-mx"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} requiere una GPU de NVIDIA. Consulte el ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Opciones de instalación"/>
+			<string name="CreateDesktopShortcut" value="Crear acceso directo de ${{officialTitle}} en el escritorio"/>
+			<string name="LaunchNvApp" value="Ejecutar ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="El instalador de NVIDIA se ha detenido"/>
+			<string name="UninstallerPaused" value="El desinstalador de NVIDIA se ha detenido"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} no se puede instalar mientras Steam se está ejecutando. Haga clic en Siguiente para salir de Steam y continuar."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} no se puede desinstalar mientras Steam se está ejecutando.  Haga clic en Siguiente para salir de Steam y continuar."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} requiere Windows7 o una versión posterior."/>
+			<string name="NotAnUpgradeMessage" value="La versión presente es la misma o más reciente."/>
+			<string name="IncompatiblePackageArchitecture" value="Está intentando instalar un paquete de 64 bits en un sistema de 32 bits. Obtenga la versión de 32 bits del paquete de instalación y vuelva a intentarlo."/>
+			<string name="BlockCrossOverInstall" value="Para continuar, elimine ${{officialTitle}} de este sistema e intente reinstalar este paquete."/>
+		</localized>
+		<localized locale="0x040b">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} -ohjelmaa ei voi asentaa vikasietotilassa."/>
+			<string name="SystemRequirements" value="järjestelmävaatimukset"/>
+			<string name="Locale_ID" value="fi-fI"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} vaatii NVIDIA-grafiikkasuorittimen. Katso ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Asennusvaihtoehdot"/>
+			<string name="CreateDesktopShortcut" value="Luo työpöydälle pikakuvakkeet kohteelle ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Käynnistä ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIA-asennus on keskeytetty"/>
+			<string name="UninstallerPaused" value="NVIDIA-asennuksen poisto on keskeytetty"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} -ohjelmaa ei voi asentaa kun Steam on käynnissä. Lopeta Steam napsauttamalla Seuraava ja jatka."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} -ohjelman asennusta ei voi poistaa kun Steam on käynnissä. Lopeta Steam napsauttamalla Seuraava ja jatka."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} vaatii version Windows7 tai sitä uudemman."/>
+			<string name="NotAnUpgradeMessage" value="Uudempi tai sama versio on jo olemassa."/>
+			<string name="IncompatiblePackageArchitecture" value="Yrität asentaa 64-bittisen pakkauksen 32-bittiseen järjestelmään. Hanki asennuspakkauksen 32-bittinen versio ja yritä uudelleen."/>
+			<string name="BlockCrossOverInstall" value="Jatka poistamalla ${{officialTitle}} tästä järjestelmästä ja yritä asentaa tämä pakkaus."/>
+		</localized>
+		<localized locale="0x040c">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}}ne peut pas être installé en mode sans échec."/>
+			<string name="SystemRequirements" value="configuration système"/>
+			<string name="Locale_ID" value="fr-fr"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} nécessite un processeur graphique NVIDIA. Voir la page ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Options d'installation"/>
+			<string name="CreateDesktopShortcut" value="Créer un raccourci clavier pour ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Lancer ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Le programme d'installation NVIDIA a été mis en pause"/>
+			<string name="UninstallerPaused" value="Le programme de désinstallation NVIDIA a été mis en pause"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} ne peut pas être installé lorsque Steam est en cours d'exécution. Cliquez sur Suivant pour quitter Steam et continuer."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} ne peut pas être désinstallé lorsque Steam est en cours d'exécution. Cliquez sur Suivant pour quitter Steam et continuer."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} nécessite Windows7 ou une version ultérieure."/>
+			<string name="NotAnUpgradeMessage" value="La même version ou une version plus récente est déjà présente."/>
+			<string name="IncompatiblePackageArchitecture" value="Vous tentez d’installer une version 64 bits sur un système 32 bits. Procurez-vous la version 32 bits du programme d’installation et réessayez."/>
+			<string name="BlockCrossOverInstall" value="Pour continuer, supprimez ${{officialTitle}} de ce système et essayez de réinstaller ce programme."/>
+		</localized>
+		<localized locale="0x040d">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="לא ניתן להתקין את ${{officialTitle}} במצב בטוח."/>
+			<string name="SystemRequirements" value="דרישות מערכת"/>
+			<string name="Locale_ID" value="he-il"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} דורש יחידה לעיבוד גרפי של NVIDIA. יש לעיין ב-${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="אפשרויות התקנה"/>
+			<string name="CreateDesktopShortcut" value="צור קיצור דרך בשולחן העבודה עבור ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="הפעל את ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="פעולת תכנת ההתקנה של NVIDIA הושהתה"/>
+			<string name="UninstallerPaused" value="פעולת תכנת הסרת ההתקנה של NVIDIA הושהתה"/>
+			<string name="CloseSteamInstall" value="לא ניתן להתקין את ${{officialTitle}} כאשר Steam פועלת. לחץ על 'הבא' כדי לצאת מ-Steam ולהמשיך."/>
+			<string name="CloseSteamUninstall" value="לא ניתן להסיר את ההתקנה של ${{officialTitle}} כאשר Steam פועלת. לחץ על 'הבא' כדי לצאת מ-Steam ולהמשיך."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} מחייב Windows7 ומעלה."/>
+			<string name="NotAnUpgradeMessage" value="כבר קיימת גרסה חדשה יותר או גרסה זהה לזו."/>
+			<string name="IncompatiblePackageArchitecture" value="מתבצע ניסיון להתקין חבילת 64 סיביות במערכת של 32 סיביות. יש להשיג את הגרסה ל-32 סיביות של חבילת ההתקנה ולנסות שוב."/>
+			<string name="BlockCrossOverInstall" value="כדי להמשיך יש להסיר את ${{officialTitle}} ממערכת זו ולנסות להתקין מחדש חבילה זו."/>
+		</localized>
+		<localized locale="0x040e">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="A(z) ${{officialTitle}} csökkentett módban nem telepíthető."/>
+			<string name="SystemRequirements" value="rendszerkövetelmények"/>
+			<string name="Locale_ID" value="hu-hu"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} NVIDIA GPU-t igényel. Lásd: ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Telepítési beállítások"/>
+			<string name="CreateDesktopShortcut" value="Asztali parancsikon létrehozása a következőhöz: ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="${{officialTitle}} indítása"/>
+			<string name="InstallerPaused" value="Az NVIDIA telepítő működése szünetel"/>
+			<string name="UninstallerPaused" value="Az NVIDIA eltávolító működése szünetel"/>
+			<string name="CloseSteamInstall" value="Az ${{officialTitle}} nem telepíthető, miközben a Steam fut. Kattintson a Tovább gombra a Steam programból való kilépéshez és a folytatáshoz."/>
+			<string name="CloseSteamUninstall" value="Az ${{officialTitle}} nem távolítható el, miközben a Steam fut. Kattintson a Tovább gombra a Steam programból való kilépéshez és a folytatáshoz."/>
+			<string name="ErrorOSNotSupported" value="A(z) ${{officialTitle}} a következőt igényli: Windows7 vagy újabb."/>
+			<string name="NotAnUpgradeMessage" value="Egy újabb vagy azonos verzió már megtalálható a számítógépen."/>
+			<string name="IncompatiblePackageArchitecture" value="64 bites csomagot próbál telepíteni 32 bites rendszerre. Szerezze be a telepítőcsomag 32 bites verzióját, és próbálja meg újra."/>
+			<string name="BlockCrossOverInstall" value="A folytatáshoz távolítsa el a(z) ${{officialTitle}} összetevőt a rendszerből, és próbálja meg újra telepíteni ezt a csomagot."/>
+		</localized>
+		<localized locale="0x0410">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} non può essere installato in modalità sicura."/>
+			<string name="SystemRequirements" value="requisiti di sistema"/>
+			<string name="Locale_ID" value="it-it"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} necessita di una GPU NVIDIA. Consultare la pagina ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Opzioni di installazione"/>
+			<string name="CreateDesktopShortcut" value="Crea un collegamento per ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Avvia ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Installazione NVIDIA in pausa"/>
+			<string name="UninstallerPaused" value="Disinstallazione NVIDIA in pausa"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}}  non può essere installato mentre Steam è in esecuzione. Fare clic su Avanti per chiudere Steam e continuare."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} non può essere disinstallato mentre Steam è in esecuzione. Fare clic su Avanti per chiudere Steam e continuare."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} richiede Windows7 o versioni successive."/>
+			<string name="NotAnUpgradeMessage" value="È presente la stessa versione o una versione più recente."/>
+			<string name="IncompatiblePackageArchitecture" value="Si sta tentando di installare un pacchetto a 64 bit su un sistema a 32 bit. Procurarsi una versione a 32 bit del pacchetto di installazione e riprovare."/>
+			<string name="BlockCrossOverInstall" value="Per continuare, rimuovere ${{officialTitle}} dal sistema e tentare di reinstallare il pacchetto."/>
+		</localized>
+		<localized locale="0x0411">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} はセーフ モードでインストールできません。"/>
+			<string name="SystemRequirements" value="システム要件"/>
+			<string name="Locale_ID" value="ja-jp"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} にはNVIDIA GPUが必要です。${{SystemRequirementsLink}}を参照してください。"/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="インストール オプション"/>
+			<string name="CreateDesktopShortcut" value="デスクトップに${{officialTitle}}のショートカットを作成"/>
+			<string name="LaunchNvApp" value="立ち上げ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIA インストーラーが一時停止しました"/>
+			<string name="UninstallerPaused" value="NVIDIA アンインストーラーが一時停止しました"/>
+			<string name="CloseSteamInstall" value="Steam の実行中は ${{officialTitle}} をインストールできません。Steam を終了して続行するには、[次へ] をクリックしてください。"/>
+			<string name="CloseSteamUninstall" value="Steam の実行中は ${{officialTitle}} をアンインストールできません。Steam を終了して続行するには、[次へ] をクリックしてください。"/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}}にはWindows7以降が必要です。"/>
+			<string name="NotAnUpgradeMessage" value="新しいバージョン、または同じバージョンが既にインストールされています。"/>
+			<string name="IncompatiblePackageArchitecture" value="32 ビットのシステムに 64 ビットのパッケージをインストールしようとしています。32 ビットバージョンのインストーラーパッケージを入手して、再度お試しください。"/>
+			<string name="BlockCrossOverInstall" value="続行するには、${{officialTitle}} をシステムから削除して再度このパッケージをインストールしてください。"/>
+		</localized>
+		<localized locale="0x0412">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="안전 모드에서는 ${{officialTitle}}을(를) 설치할 수 없습니다."/>
+			<string name="SystemRequirements" value="시스템 요건"/>
+			<string name="Locale_ID" value="ko-kr"/>
+			<string name="NvGpuRequired" value="${{officialTitle}}은 NVIDIA GPU가 필요합니다. ${{SystemRequirementsLink}}를 참조하십시오."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="설치 옵션"/>
+			<string name="CreateDesktopShortcut" value="바탕화면에 ${{officialTitle}} 바로가기를 만듭니다"/>
+			<string name="LaunchNvApp" value="${{officialTitle}} 시작"/>
+			<string name="InstallerPaused" value="NVIDIA 설치 프로그램이 일시 중지되었습니다."/>
+			<string name="UninstallerPaused" value="NVIDIA 제거 프로그램이 일시 중지되었습니다."/>
+			<string name="CloseSteamInstall" value="Steam이 실행 중이어서 ${{officialTitle}}을(를) 설치할 수 없습니다. 다음을 클릭하여 Steam을 중지하고 계속하십시오."/>
+			<string name="CloseSteamUninstall" value="Steam이 실행 중이어서 ${{officialTitle}}을(를) 제거할 수 없습니다. 다음을 클릭하여 Steam을 중지하고 계속하십시오."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}}은(는) Windows7 이상의 버전을 필요로 합니다. "/>
+			<string name="NotAnUpgradeMessage" value="신버전 또는 동일한 버전이 있습니다."/>
+			<string name="IncompatiblePackageArchitecture" value="32비트 시스템에 64비트 패키지를 설치할 수 없습니다. 32비트 설치 관리자 패키지 버전을 다운로드한 후 다시 시도하십시오."/>
+			<string name="BlockCrossOverInstall" value="계속 진행하려면 이 시스템에서 ${{officialTitle}}을(를) 제거한 후 이 패키지를 다시 설치하십시오."/>
+		</localized>
+		<localized locale="0x0413">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} kan niet in veilige modus worden geïnstalleerd."/>
+			<string name="SystemRequirements" value="systeemvereisten"/>
+			<string name="Locale_ID" value="nl-nl"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} vereist een NVIDIA GPU. Raadpleeg de ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Installatieopties"/>
+			<string name="CreateDesktopShortcut" value="Maak bureaublad-snelkoppeling voor ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Start ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIA-installatieprogramma is gepauzeerd"/>
+			<string name="UninstallerPaused" value="NVIDIA-uninstaller is gepauzeerd"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} kan niet worden geïnstalleerd terwijl Steam wordt uitgevoerd. Klik op volgende om Steam af te sluiten en verder te gaan."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} kan niet worden verwijderd terwijl Steam wordt uitgevoerd. Klik op volgende om Steam af te sluiten en verder te gaan."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} vereist Windows7 of hoger."/>
+			<string name="NotAnUpgradeMessage" value="Er is een nieuwere of dezelfde versie aanwezig."/>
+			<string name="IncompatiblePackageArchitecture" value="U probeert een 64-bits pakket te installeren op een 32-bits systeem. Verkrijg de 32-bits versie van het installatiepakket en probeer opnieuw."/>
+			<string name="BlockCrossOverInstall" value="Verwijder ${{officialTitle}} van dit systeem om door te gaan en probeer dit pakket opnieuw te installeren."/>
+		</localized>
+		<localized locale="0x0414">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} kan ikke installeres i sikkermodus."/>
+			<string name="SystemRequirements" value="systemkrav"/>
+			<string name="Locale_ID" value="nb-no"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} krever en NVIDIA grafikkprosessor. Se ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Installeringsalternativer"/>
+			<string name="CreateDesktopShortcut" value="Opprett skrivebordsnarvei for ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Start ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIA-installeringsprogram har tatt pause"/>
+			<string name="UninstallerPaused" value="NVIDIA-avinstalleringsprogram har tatt pause"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} kan ikke installeres mens Steam kjører. Klikk neste for å avslutte Steam og fortsette."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} kan ikke avinstalleres mens Steam kjører. Klikk neste for å avslutte Steam og fortsette."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} krever Windows7 eller nyere."/>
+			<string name="NotAnUpgradeMessage" value="En nyere versjon eller samme versjon  er allerede installert på denne datamaskinen"/>
+			<string name="IncompatiblePackageArchitecture" value="Du prøver å installere en 64-bit-pakke på et 32-bit-system. Få tak i 32-bit-versjonen av installasjonspakken og prøv på nytt."/>
+			<string name="BlockCrossOverInstall" value="Fjern ${{officialTitle}} fra dette systemet og prøv å installere denne pakken på nytt for å fortsette."/>
+		</localized>
+		<localized locale="0x0415">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="Nie można zainstalować programu ${{officialTitle}} w trybie awaryjnym."/>
+			<string name="SystemRequirements" value="wymagania systemowe"/>
+			<string name="Locale_ID" value="pl-pl"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} wymaga procesora graficznego NVIDIA. Patrz ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Opcje instalacji"/>
+			<string name="CreateDesktopShortcut" value="Utwórz na pulpicie skrót do ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Uruchom ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Program instalacyjny NVIDIA został wstrzymany"/>
+			<string name="UninstallerPaused" value="Dezinstalator NVIDIA został wstrzymany"/>
+			<string name="CloseSteamInstall" value="Nie można zainstalować ${{officialTitle}}, gdy uruchomiona jest usługa Steam. Kliknij Dalej, aby zamknąć usługę Steam i kontynuować."/>
+			<string name="CloseSteamUninstall" value="Nie można odinstalować ${{officialTitle}}, gdy uruchomiona jest usługa Steam. Kliknij Dalej, aby zamknąć usługę Steam i kontynuować."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} wymaga Windows7 lub nowszej wersji."/>
+			<string name="NotAnUpgradeMessage" value="Zainstalowana jest już nowsza lub ta sama wersja programu."/>
+			<string name="IncompatiblePackageArchitecture" value="Próbujesz zainstalować 64-bitowy pakiet w 32-bitowym systemie. Uzyskaj 32-bitową wersję pakietu instalacyjnego i spróbuj ponownie."/>
+			<string name="BlockCrossOverInstall" value="Aby kontynuować, usuń ${{officialTitle}} z tego systemu i spróbuj zainstalować ten pakiet ponownie."/>
+		</localized>
+		<localized locale="0x0816">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} em modo de segurança."/>
+			<string name="SystemRequirements" value="requisitos do sistema"/>
+			<string name="Locale_ID" value="pt-pt"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} requer uma GPU da NVIDIA. Consulte os ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Opções de instalação"/>
+			<string name="CreateDesktopShortcut" value="Criar atalho no ambiente de trabalho para o ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Iniciar o ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="O instalador da NVIDIA está em pausa"/>
+			<string name="UninstallerPaused" value="O desinstalador da NVIDIA está em pausa"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} não pode ser instalado enquanto o Steam estiver em execução. Clique em 'Seguinte' para sair do Steam e continuar."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} não pode ser desinstalado enquanto o Steam estiver em execução. Clique em 'Seguinte' para sair do Steam e continuar."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} requer Windows7 ou mais recente."/>
+			<string name="NotAnUpgradeMessage" value="Já existe uma versão idêntica ou mais recente."/>
+			<string name="IncompatiblePackageArchitecture" value="Está a tentar instalar um pacote de 64 bits num sistema de 32 bits. Obtenha a versão de 32 bits do pacote de instalação e tente novamente."/>
+			<string name="BlockCrossOverInstall" value="Para continuar, remova ${{officialTitle}} do sistema e tente reinstalar este pacote."/>
+		</localized>
+		<localized locale="0x0416">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} não pode ser desinstalado no modo de segurança."/>
+			<string name="SystemRequirements" value="requisitos do sistema"/>
+			<string name="Locale_ID" value="pt-br"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} requer uma GPU NVIDIA. Consulte os ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Opções de instalação"/>
+			<string name="CreateDesktopShortcut" value="Criar atalho de área de trabalho para ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Abrir ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Instalador NVIDIA pausou"/>
+			<string name="UninstallerPaused" value="Desintalador NVIDIA pausou"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} não pode ser instalado enquanto o Steam estiver sendo executado. Clique em Avançar para sair do Steam e continuar."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} não pode ser desinstalado enquanto o Steam estiver sendo executado. Clique em Avançar para sair do Steam e continuar."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} exige Windows7 ou mais recente."/>
+			<string name="NotAnUpgradeMessage" value="Uma nova versão ou a mesma versão está presente."/>
+			<string name="IncompatiblePackageArchitecture" value="Você está tentando instalar um pacote de 64 bits em um sistema de 32 bits. Providencie a versão de 32 bits do pacote instalador e tente novamente."/>
+			<string name="BlockCrossOverInstall" value="Para continuar, remova ${{officialTitle}} do sistema e tente reinstalar este pacote."/>
+		</localized>
+		<localized locale="0x0419">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="Установить ${{officialTitle}} в безопасном режиме невозможно."/>
+			<string name="SystemRequirements" value="cистемные требования"/>
+			<string name="Locale_ID" value="ru-ru"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} требует ГП NVIDIA. См. ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Параметры установки"/>
+			<string name="CreateDesktopShortcut" value="Создать ярлык на рабочем столе для ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Запустить ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Работа программы установки NVIDIA была приостановлена"/>
+			<string name="UninstallerPaused" value="Работа программы удаления NVIDIA была приостановлена"/>
+			<string name="CloseSteamInstall" value="Установить ${{officialTitle}} во время работы Steam невозможно. Нажмите «Далее», чтобы выйти из Steam и продолжить."/>
+			<string name="CloseSteamUninstall" value="Установить ${{officialTitle}} во время работы Steam невозможно. Нажмите «Далее», чтобы выйти из Steam и продолжить."/>
+			<string name="ErrorOSNotSupported" value="Для работы ${{officialTitle}} необходимо использовать графический драйвер Windows7 или более позднюю версию."/>
+			<string name="NotAnUpgradeMessage" value="Эта или более новая версия уже установлена."/>
+			<string name="IncompatiblePackageArchitecture" value="Вы пытаетесь установить 64-разрядный пакет на 32-разрядную систему. Загрузите 32-разрядную версию установочного пакета и повторите попытку."/>
+			<string name="BlockCrossOverInstall" value="Чтобы продолжить, удалите ${{officialTitle}} из данной системы и попробуйте переустановить пакет."/>
+		</localized>
+		<localized locale="0x041b">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} nie je možné nainštalovať v núdzovom režime."/>
+			<string name="SystemRequirements" value="systémové požiadavky"/>
+			<string name="Locale_ID" value="sk-sk"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} vyžaduje grafický procesor NVIDIA. Prečítajte si požiadavky na stránke ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Možnosti inštalácie"/>
+			<string name="CreateDesktopShortcut" value="Vytvoriť na pracovnej ploche odkaz pre ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Spustiť ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Inštalátor NVIDIA sa pozastavil"/>
+			<string name="UninstallerPaused" value="Odinštalátor NVIDIA sa pozastavil"/>
+			<string name="CloseSteamInstall" value="Program ${{officialTitle}} nemožno nainštalovať, kým je spustený softvér Steam. Kliknutím na Ďalej ukončite Steam a pokračujte."/>
+			<string name="CloseSteamUninstall" value="Program ${{officialTitle}} nemožno odinštalovať, kým je spustený softvér Steam. Kliknutím na Ďalej ukončite Steam a pokračujte."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} vyžaduje Windows7 alebo novšiu verziu."/>
+			<string name="NotAnUpgradeMessage" value="K dispozícii je novšia alebo rovnaká verzia produktu."/>
+			<string name="IncompatiblePackageArchitecture" value="Pokúšate sa nainštalovať 64-bitový balík do 32-bitového systému. Získajte 32-bitovú verziu balíka inštalátora a skúste to znova."/>
+			<string name="BlockCrossOverInstall" value="Ak chcete pokračovať, odstráňte ${{officialTitle}} z tohto systému a skúste tento balík preinštalovať."/>
+		</localized>
+		<localized locale="0x0422">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} неможливо встановити в безпечному режимі."/>
+			<string name="SystemRequirements" value="Cистемні вимоги"/>
+			<string name="Locale_ID" value="uk-ua"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} потребує графічного процесора NVIDIA. Ознайомтесь із ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Варіанти встановлення"/>
+			<string name="CreateDesktopShortcut" value="Створити ярлик на робочому столі для ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Запустити ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="Інсталятор NVIDIA призупинив роботу"/>
+			<string name="UninstallerPaused" value="Програма видалення NVIDIA призупинила роботу"/>
+			<string name="CloseSteamInstall" value="Неможливо встановити ${{officialTitle}}, коли запущено Steam. Натисніть “Далі”, щоб вийти зі Steam та продовжити встановлення."/>
+			<string name="CloseSteamUninstall" value="Неможливо видалити ${{officialTitle}}, коли запущено Steam. Натисніть “Далі”, щоб вийти зі Steam та продовжити видалення."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} потребує ОС Windows 7 або пізнішу."/>
+			<string name="NotAnUpgradeMessage" value="Доступна новіша або така сама версія."/>
+			<string name="IncompatiblePackageArchitecture" value="Ви намагаєтесь встановити пакет для 64-бітної системи на 32-бітну систему. Будь ласка, отримайте 32-бітну версію пакета інсталятора та повторіть спробу."/>
+			<string name="BlockCrossOverInstall" value="Щоб продовжити, видаліть NVIDIA App з даної системи та повторіть спробу встановлення цього пакету."/>
+		</localized>
+		<localized locale="0x0424">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} ni mogoče namestiti v varnem načinu."/>
+			<string name="SystemRequirements" value="zahteve za sistem"/>
+			<string name="Locale_ID" value="sl-sl"/>
+			<string name="NvGpuRequired" value="Za ${{officialTitle}} je potreben grafični procesor NVIDIA. Glejte ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Namestitvene možnosti"/>
+			<string name="CreateDesktopShortcut" value="Ustvari bližnjico za namizje za ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Zaženi ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIA Installer se je ustavil"/>
+			<string name="UninstallerPaused" value="Program za odstranitev aplikacije NVIDIA se je ustavil"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} ni mogoče namestiti, medtem ko Steam deluje. Kliknite Naslednji, da zaprete Steam in nadaljujte."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}}  ni mogoče odstraniti, medtem ko Steam deluje. Kliknite Naslednji, da zaprete Steam in nadaljujte."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} zahteva Windows7 ali novejšo."/>
+			<string name="NotAnUpgradeMessage" value="Prisotna je novejša ali ista različica. "/>
+			<string name="IncompatiblePackageArchitecture" value="64-bitni paket poizkušate namestiti na 32-bitni sistem. Prosimo, da pridobite 32-bitno različico namestitvenega paketa in poizkusite znova."/>
+			<string name="BlockCrossOverInstall" value="Za nadaljevanje odstranite ${{officialTitle}} s tega sistema in poizkusite znova namestiti ta paket."/>
+		</localized>
+		<localized locale="0x041d">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} kan inte installeras i säkert läge."/>
+			<string name="SystemRequirements" value="systemkrav"/>
+			<string name="Locale_ID" value="sv-se"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} kräver en NVIDIA-GPU. Se ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Installationsalternativ"/>
+			<string name="CreateDesktopShortcut" value="Skapa skrivbordsgenväg för ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Starta ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIAs installationsprogram har pausat"/>
+			<string name="UninstallerPaused" value="NVIDIAs avinstallationsprogram har pasat"/>
+			<string name="CloseSteamInstall" value="${{officialTitle}} kan inte installeras medan Steam körs. Avsluta Steam genom att klicka på Nästa och fortsätt."/>
+			<string name="CloseSteamUninstall" value="${{officialTitle}} kan inte avinstalleras medan Steam körs. Avsluta Steam genom att klicka på Nästa och fortsätt."/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} kräver Windows7 eller senare."/>
+			<string name="NotAnUpgradeMessage" value="En nyare eller samma version av finns."/>
+			<string name="IncompatiblePackageArchitecture" value="Du försöker installera ett 64-bitarspaket på en 32-bitarsdator. Skaffa 32-bitarsversionen av installationspaketet och försök igen."/>
+			<string name="BlockCrossOverInstall" value="Du fortsätter genom att ta bort ${{officialTitle}} från den här datorn. Försök sedan installera det här paketet igen."/>
+		</localized>
+		<localized locale="0x041e">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="ระบบไม่สามารถติดตั้ง ${{officialTitle}} ในเซฟโหมดได้"/>
+			<string name="SystemRequirements" value="ข้อกำหนดของระบบ"/>
+			<string name="Locale_ID" value="th-th"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} จำเป็นต้องใช้ NVIDIA GPU โปรดดูที่ ${{SystemRequirementsLink}}"/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="ตัวเลือกการติดตั้ง"/>
+			<string name="CreateDesktopShortcut" value="สร้างทางลัดบนเดสก์ท็อปสำหรับ  ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="เปิด  ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="โปรแกรมติดตั้งของ NVIDIA หยุดชั่วคราว"/>
+			<string name="UninstallerPaused" value="โปรแกรมถอนการติดตั้งของ NVIDIA หยุดชั่วคราว"/>
+			<string name="CloseSteamInstall" value="ไม่สามารถติดตั้ง ${{officialTitle}} ขณะ Steam กำลังทำงาน คลิก ถัดไป เพื่อออกจาก Steam และดำเนินการต่อ"/>
+			<string name="CloseSteamUninstall" value="ไม่สามารถถอนการติดตั้ง ${{officialTitle}} ขณะ Steam กำลังทำงาน คลิก ถัดไป เพื่อออกจาก Steam และดำเนินการต่อ"/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} ต้องมี Windows7 หรือสูงกว่า "/>
+			<string name="NotAnUpgradeMessage" value="มีเวอร์ชันเดิมหรือใหม่กว่า"/>
+			<string name="IncompatiblePackageArchitecture" value="คุณกำลังพยายามติดตั้งแพ็กเกจ 64 บิตบนระบบแบบ 32 บิต กรุณาขอรับเวอร์ชัน 32 บิตของแพ็กเกจตัวติดตั้งแล้วลองใหม่"/>
+			<string name="BlockCrossOverInstall" value="หากต้องการดำเนินการต่อ โปรดลบ ${{officialTitle}} จากระบบนี้แล้วลองการติดตั้งแพ็กเกจนี้ใหม่"/>
+		</localized>
+		<localized locale="0x041f">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}}, güvenli modda kaldırılamaz."/>
+			<string name="SystemRequirements" value="sistem gerekleri"/>
+			<string name="Locale_ID" value="tr_tr"/>
+			<string name="NvGpuRequired" value="${{officialTitle}}NVIDIA GPU kullanımını gerektirir. ${{SystemRequirementsLink}} bağlantısına başvurun."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="Kurulum seçenekleri"/>
+			<string name="CreateDesktopShortcut" value="${{officialTitle}} için masaüstü kısayolu oluştur"/>
+			<string name="LaunchNvApp" value="${{officialTitle}} uygulamasını çalıştır"/>
+			<string name="InstallerPaused" value="NVIDIA Kurulum programı duraklatıldı"/>
+			<string name="UninstallerPaused" value="NVIDIA Kaldırma programı duraklatıldı"/>
+			<string name="CloseSteamInstall" value="Steam çalışırken ${{officialTitle}} kurulumu yapılamaz. Steam'den çıkıp devam etmek için İleri düğmesine basın."/>
+			<string name="CloseSteamUninstall" value="Steam çalışırken ${{officialTitle}} kaldırma işlemi yapılamaz. Steam'den çıkıp devam etmek için İleri düğmesine basın."/>
+			<string name="ErrorOSNotSupported" value="$${{officialTitle}}, Windows7 veya sonraki sürümünü gerektirir. "/>
+			<string name="NotAnUpgradeMessage" value="Aynı veya daha yeni bir sürüm mevcut."/>
+			<string name="IncompatiblePackageArchitecture" value="32 bitlik bir sisteme 64 bitlik bir paket kurmaya çalışıyorsunuz. Lütfen kurulum paketinin 32 bitlik sürümünü edinip tekrar deneyin."/>
+			<string name="BlockCrossOverInstall" value="Devam etmek için ${{officialTitle}} yazılımını bu sistemden kaldırıp bu paketi yeniden kurmayı deneyin."/>
+		</localized>
+		<localized locale="0x0804">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} 无法在安全模式下安装。"/>
+			<string name="SystemRequirements" value="系统要求"/>
+			<string name="Locale_ID" value="zh-cn"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} 需要 NVIDIA GPU。参考 ${{SystemRequirementsLink}}。"/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="安装选项"/>
+			<string name="CreateDesktopShortcut" value="为 ${{officialTitle}} 创建桌面快捷方式"/>
+			<string name="LaunchNvApp" value="启动 ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIA 安装程序已暂停"/>
+			<string name="UninstallerPaused" value="NVIDIA 卸载程序已暂停"/>
+			<string name="CloseSteamInstall" value="Steam 运行时无法安装 ${{officialTitle}}。单击“下一步”退出 Steam 并继续。"/>
+			<string name="CloseSteamUninstall" value="Steam 运行时无法卸载 ${{officialTitle}}。单击“下一步”退出 Steam 并继续。"/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} 要求 Windows7 或更高版本。 "/>
+			<string name="NotAnUpgradeMessage" value="存在更新或相同的版本。"/>
+			<string name="IncompatiblePackageArchitecture" value="您正尝试在 32 位的系统上安装 64 位的安装包。请获取 32 位版本的安装程序包，然后重试。"/>
+			<string name="BlockCrossOverInstall" value="若要继续，请从此系统中删除 ${{officialTitle}}，然后尝试重新安装此安装包。"/>
+		</localized>
+		<localized locale="0x0404">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="InstallSafeModeBlockedMessage" value="${{officialTitle}} 無法在安全模式中安裝。"/>
+			<string name="SystemRequirements" value="系統需求"/>
+			<string name="Locale_ID" value="zh-tw"/>
+			<string name="NvGpuRequired" value="${{officialTitle}} 需要有 NVIDIA GPU。請參閱 ${{SystemRequirementsLink}}。"/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="InstallOptions" value="安裝選項"/>
+			<string name="CreateDesktopShortcut" value="建立 ${{officialTitle}} 的備份捷徑"/>
+			<string name="LaunchNvApp" value="啟動 ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="「NVIDIA 安裝程式」已暫停"/>
+			<string name="UninstallerPaused" value="「NVIDIA 解除安裝程式」已暫停"/>
+			<string name="CloseSteamInstall" value="在執行 Steam 期間，${{officialTitle}} 無法安裝。按一下「下一步」以退出 Steam 並繼續。"/>
+			<string name="CloseSteamUninstall" value="在執行 Steam 期間，${{officialTitle}} 無法解除安裝。按一下「下一步」以退出 Steam 並繼續。"/>
+			<string name="ErrorOSNotSupported" value="${{officialTitle}} 需要 Windows7 或更新版本。 "/>
+			<string name="NotAnUpgradeMessage" value="存在較新或相同的版本。"/>
+			<string name="IncompatiblePackageArchitecture" value="您正試圖在 32 位元的系統上安裝 64 位元的套件。請取得安裝程式套件的 32 位元版本，然後再試一次。"/>
+			<string name="BlockCrossOverInstall" value="若要繼續，請從此系統中移除 ${{officialTitle}}，然後試著重新安裝此套件。"/>
+		</localized>
+		<localized locale="0x0809">
+			<string name="officialTitle" value="NVIDIA App"/>
+			<string name="ErrorOSNotSupported" value=" • ${{officialTitle}} requires Windows7 or later."/>
+			<string name="NotAnUpgradeMessage" value=" • A newer version is present."/>
+			<string name="InstallSafeModeBlockedMessage" value=" • ${{officialTitle}} cannot be installed in safe mode."/>
+			<string name="Locale_ID" value="en-gb"/>
+			<string name="NvGpuRequired" value=" • ${{officialTitle}} requires an NVIDIA GPU. Refer to the ${{SystemRequirementsLink}}."/>
+			<string name="ProductVersion" value="${{DisplayVersion}}"/>
+			<string name="SystemRequirements" value="system requirements"/>
+			<string name="InstallOptions" value="Installation options"/>
+			<string name="CreateDesktopShortcut" value="Create desktop shortcut for ${{officialTitle}}"/>
+			<string name="LaunchNvApp" value="Launch ${{officialTitle}}"/>
+			<string name="InstallerPaused" value="NVIDIA Installer has paused"/>
+			<string name="UninstallerPaused" value="NVIDIA Uninstaller has paused"/>
+			<string name="CloseSteamInstall" value=" • ${{officialTitle}} cannot be installed while Steam is running. Click Next to quit Steam and continue."/>
+			<string name="CloseSteamUninstall" value=" • ${{officialTitle}} cannot be uninstalled while Steam is running. Click Next to quit Steam and continue."/>
+			<string name="IncompatiblePackageArchitecture" value=" • You are attempting to install a 64 bit package on a 32 bit system. Please obtain the 32 bit version of the installer package and try again."/>
+			<string name="BlockCrossOverInstall" value=" • To continue, remove ${{officialTitle}} from this system and try reinstalling this package."/>
+		</localized>
+	</strings>
+	<include name=".\support.dat" select="/nvi/*"/>
+</nvi>

@@ -1,0 +1,3 @@
+﻿NVIDIA App biedt een uniform GPU-controlecentrum voor je NVIDIA grafische kaart. Het is de makkelijkste manier om je pc up-to-date te houden met de nieuwste NVIDIA-stuurprogramma's en technologie. Het biedt eenvoudige toegang tot exclusieve NVIDIA-apps, een uniform GPU-controlecentrum en krachtige opnametools vanuit een in-game overlay.
+
+Door te installeren, upgrade je GeForce Experience naar NVIDIA App en zet je je voorkeuren over.

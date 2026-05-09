@@ -1,0 +1,5 @@
+﻿NVIDIA App potrebuje podatke za konfiguriranje vaše grafične kartice in aplikacijskih nastavitev za najboljšo oblikovalno in igralno izkušnjo ter ustvarjanje vsebine. Poznati moramo konfiguracijo strojne in programske opreme vašega računalnika, nameščenih iger in kreativnih/oblikovalnih aplikacij, nastavitev za igre in aplikacije in podatke o zmogljivosti, matriki uporabe NVIDIA App in geografskem območju. 
+
+Te podatke uporabljamo za optimiziranje nastavitev za vašo aplikacijo, dobavo programske opreme in posodobitve vsebine, izboljšanje funkcij aplikacije, prevzem kod za brezplačne igre in uskladitev z lokalnimi zakoni o zasebnosti.
+
+Naš pravilnik o zasebnosti pojasnjuje, katere podatke zbiramo in kaj z njimi počnemo.  Možnosti zasebnosti lahko konfigurirate v meniju z nastavitvami NVIDIA App.

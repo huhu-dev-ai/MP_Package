@@ -1,0 +1,26 @@
+<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.5 4.5H4.5V5.5H5.5V4.5Z"/>
+<path d="M7.5 4.5H6.5V5.5H7.5V4.5Z"/>
+<path d="M9.5 4.5H8.5V5.5H9.5V4.5Z"/>
+<path d="M11.5 4.5H10.5V5.5H11.5V4.5Z"/>
+<path d="M13.5 4.5H12.5V5.5H13.5V4.5Z"/>
+<path d="M15.5 4.5H14.5V5.5H15.5V4.5Z"/>
+<path d="M5.5 6.5H4.5V7.5H5.5V6.5Z"/>
+<path d="M7.5 6.5H6.5V7.5H7.5V6.5Z"/>
+<path d="M9.5 6.5H8.5V7.5H9.5V6.5Z"/>
+<path d="M11.5 6.5H10.5V7.5H11.5V6.5Z"/>
+<path d="M13.5 6.5H12.5V7.5H13.5V6.5Z"/>
+<path d="M15.5 6.5H14.5V7.5H15.5V6.5Z"/>
+<path d="M5.5 8.5H4.5V9.5H5.5V8.5Z"/>
+<path d="M7.5 8.5H6.5V9.5H7.5V8.5Z"/>
+<path d="M9.5 8.5H8.5V9.5H9.5V8.5Z"/>
+<path d="M5.5 10.5H4.5V11.5H5.5V10.5Z"/>
+<path d="M7.5 10.5H6.5V11.5H7.5V10.5Z"/>
+<path d="M9.5 10.5H8.5V11.5H9.5V10.5Z"/>
+<path d="M5.5 12.5H4.5V13.5H5.5V12.5Z"/>
+<path d="M7.5 12.5H6.5V13.5H7.5V12.5Z"/>
+<path d="M5.5 14.5H4.5V15.5H5.5V14.5Z"/>
+<path d="M7.5 14.5H6.5V15.5H7.5V14.5Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.7 10.65L15.05 14.5H12.3L13.65 10.65H13.7ZM12.9 9L9.5 18H11.15L11.95 15.75H15.55L16.35 18H18L14.55 9H12.9Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 2V18H7.5V17H3V3H17V7.5H18V2H2Z"/>
+</svg>

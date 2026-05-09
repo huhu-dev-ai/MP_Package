@@ -1,0 +1,3 @@
+﻿NVIDIA App 為您的 NVIDIA 圖形卡提供統一的 GPU 控制中心。這是確保您的電腦擁有最新的 NVIDIA 驅動程式和技術最簡單的方法。它讓您可以輕鬆存取獨有的 NVIDIA 應用程式、統一的 GPU 控制中心，以及在遊戲內重疊中提供的強大錄製工具。
+
+在 NVIDIA App 中安裝 GeForce Experience 升級，並轉移您的喜好設定。

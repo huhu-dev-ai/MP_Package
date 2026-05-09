@@ -1,0 +1,73 @@
+{
+  "pageName": "system",
+  "pageTitle": "preferences.system",
+  "tabs": [
+    {
+      "tabName": "performance",
+      "text": "performance.title"
+    },
+    {
+      "tabName": "overview",
+      "text": "system.overview.geForceTitle"
+    },
+    {
+      "tabName": "display",
+      "text": "system.display.title"
+    },
+    {
+      "tabName": "video",
+      "text": "system.video.title"
+    }
+  ],
+  "content": {
+    "strings": []
+  },
+  "performance": {
+    "content": {
+      "strings": [
+        {
+          "text": "performance.statistics"
+        }
+      ]
+    }
+  },
+  "overview": {
+    "content": {
+      "strings": [
+        {
+          "text": "system.overview.displaysTitle"
+        },
+        {
+          "text": "preferences.featureReadiness.controlPanelFeature.header"
+        },
+        {
+          "text": "preferences.featureReadiness.controlPanelFeature.description"
+        }
+      ]
+    }
+  },
+  "display": {
+    "content": {
+      "strings": [
+        {
+          "text": "manage3dSettings.globalSettings"
+        }
+      ]
+    }
+  },
+  "video": {
+    "content": {
+      "strings": [
+        {
+          "text": "manage3dSettings.globalSettings"
+        },
+        {
+          "text": "system.video.rtxVideoEnhancements"
+        },
+        {
+          "text": "common.restore"
+        }
+      ]
+    }
+  }
+}

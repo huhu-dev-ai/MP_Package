@@ -1,0 +1,3 @@
+﻿NVIDIA App, NVIDIA grafik kartınız için birleşik bir GPU kontrol merkezi sunar. Bu, bilgisayarınızı en yeni NVIDIA sürücüleri ve teknolojisiyle güncel tutmanın en kolay yoludur. Özel NVIDIA uygulamalarına, birleşik GPU kontrol merkezine ve oyun içi bir arayüzde bulunan güçlü kayıt araçlarına kolay erişim sağlar.
+
+Uygulamanın kurulmasıyla, GeForce Experience NVIDIA App’e yükseltilir ve tercihlerinizi aktarılır.

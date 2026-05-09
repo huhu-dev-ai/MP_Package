@@ -1,0 +1,35 @@
+{
+  "pageName": "graphics",
+  "pageTitle": "layout.features.manage3dsettings.title",
+  "tabs": [
+    {
+      "tabName": "program",
+      "text": "manage3dSettings.programSettings"
+    },
+    {
+      "tabName": "global",
+      "text": "manage3dSettings.globalSettings"
+    }
+  ],
+  "content": {
+    "strings": []
+  },
+  "program": {
+    "content": {
+      "strings": [
+        {
+          "text": "manage3dSettings.subTitle"
+        }
+      ]
+    }
+  },
+  "global": {
+    "content": {
+      "strings": [
+        {
+          "text": "manage3dSettings.subTitle"
+        }
+      ]
+    }
+  }
+}

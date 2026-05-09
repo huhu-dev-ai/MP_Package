@@ -1,0 +1,5 @@
+﻿NVIDIA App utilise des données pour configurer les paramètres de votre carte graphique et de vos applications afin de vous faire bénéficier d’une expérience de jeu, de création de contenu et de conception optimale. Nous avons besoin de connaître la configuration matérielle et logicielle de votre PC, les jeux et les applications de création/conception installés, les paramètres et les données de performance des jeux et des applications, les mesures d’utilisation de NVIDIA App et la région géographique. 
+
+Nous utilisons ces données pour optimiser les paramètres des applications, fournir des mises à jour logicielles et de contenu, améliorer les fonctionnalités des applications, échanger des codes pour des jeux gratuits et nous conformer aux lois locales en matière de confidentialité.
+
+Notre politique de confidentialité explique les données que nous recueillons et ce que nous en faisons.  Vous pouvez configurer les options de confidentialité dans le menu Paramètres de NVIDIA App.

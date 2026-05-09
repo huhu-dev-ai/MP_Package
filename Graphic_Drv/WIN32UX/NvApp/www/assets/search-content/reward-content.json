@@ -1,0 +1,24 @@
+{
+  "pageName": "redeem",
+  "pageTitle": "rewards.redeem",
+  "tabs": [],
+  "content": {
+    "strings": [
+      {
+        "text": "rewards.redeem"
+      },
+      {
+        "text": "rewards.rewardsPageTitle"
+      },
+      {
+        "text": "rewards.redeemCoupon"
+      },
+      {
+        "text": "rewards.enterCouponCode"
+      },
+      {
+        "text": "rewards.onGoingRewards"
+      }
+    ]
+  }
+}

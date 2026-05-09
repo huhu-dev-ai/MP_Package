@@ -1,0 +1,3 @@
+﻿Aplikácia NVIDIA App ponúka zjednotené ovládacie centrum GPU pre vašu grafickú kartu NVIDIA. Ide o najjednoduchší spôsob, ako udržať počítač aktuálny vďaka najnovším ovládačom a technológiám NVIDIA. Poskytuje jednoduchý prístup k exkluzívnym aplikáciám NVIDIA, zjednotenému ovládaciemu centru GPU, ako aj k výkonným nástrojom na nahrávanie, ktoré sú k dispozícii v rámci prekrytia v hre.
+
+Inštaláciou sa GeForce Experience inovuje na aplikáciu NVIDIA App a vaše predvoľby sa prenesú.

@@ -1,0 +1,4 @@
+{
+    "ModuleMap\\CrimsonUtil.dll": "${{NVCONTAINER_INSTALL_ROOT}}/CrimsonUtil.dll",
+    "ModuleMap\\libcrypto-3-x64.dll": "${{NVCONTAINER_INSTALL_ROOT}}/libcrypto-3-x64.dll"
+}

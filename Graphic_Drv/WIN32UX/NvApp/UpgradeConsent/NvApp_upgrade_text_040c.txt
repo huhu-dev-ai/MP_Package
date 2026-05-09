@@ -1,0 +1,3 @@
+﻿NVIDIA App offre un centre de contrôle du processeur graphique unifié pour votre carte graphique NVIDIA. C’est le meilleur moyen de garder votre PC à jour avec les pilotes et la technologie NVIDIA les plus récents. Elle facilite l’accès à des applications NVIDIA exclusives, à un centre de contrôle du processeur graphique unifié et à de puissants outils d’enregistrement disponibles depuis une interface superposée en jeu.
+
+Le processus d’installation met à niveau GeForce Experience vers NVIDIA App et transfère vos préférences.

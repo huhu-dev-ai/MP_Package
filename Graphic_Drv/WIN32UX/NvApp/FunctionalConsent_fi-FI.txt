@@ -1,0 +1,5 @@
+﻿NVIDIA App -ohjelma vaatii tietoja näytönohjaimen ja sovellusten asetusten määrittämiseksi parhaan pelikokemuksen, sisällön parhaan luomisen ja suunnittelun varmistamiseksi. Meidän on tiedettävä tietokoneesi laitteisto- ja ohjelmistokokoonpano, asennetut pelit ja luovat/suunnittelusovellukset, peli- ja sovellusasetukset sekä suorituskykytiedot, NVIDIA App -ohjelman käyttötiedot ja maantieteellinen alue. 
+
+Käytämme näitä tietoja sovellusasetustesi optimointiin, ohjelmisto- ja sisältöpäivitysten toimittamiseen, sovellusominaisuuksien parantamiseen, ilmaispelikoodien lunastamiseen ja paikallisen tietosuojalainsäädännön noudattamiseen.
+
+Tietosuojakäytäntömme kertoo, mitä tietoja keräämme ja mitä teemme niillä.  Voit määrittää tietosuoja-asetukset NVIDIA App -ohjelman Asetukset-valikossa.

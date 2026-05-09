@@ -1,0 +1,3 @@
+﻿NVIDIA App -ohjelma tarjoaa yhtenäisen grafiikkasuorittimen ohjauskeskuksen NVIDIA-grafiikkakorttisi hallintaa varten. Se on helpoin tapa pitää tietokoneesi NVIDIA-ohjaimet ja -tekniikka ajan tasalla. Se tarjoaa helpon pääsyn eksklusiivisiin NVIDIA-sovelluksiin, yhtenäiseen grafiikkasuorittimen ohjauskeskukseen ja tehokkaisiin nauhoitustyökaluihin, jotka ovat saatavilla pelinsisäiseltä päällekkäistasolta.
+
+Asentaminen päivittää GeForce Experiencen NVIDIA App-ohjelmaan ja siirtää oletusasetuksesi.

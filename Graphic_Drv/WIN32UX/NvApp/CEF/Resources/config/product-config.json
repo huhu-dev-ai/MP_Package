@@ -1,0 +1,13 @@
+{
+  "logging": {
+    "level": "debug",
+    "loggers": [
+      {
+        "enabled": true,
+        "type": "file",
+        "maxFileRotation": 2,
+        "fileSizeLimit": 52428800
+      }
+    ]
+  }
+}

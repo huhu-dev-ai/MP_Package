@@ -1,0 +1,5 @@
+﻿NVIDIA App, grafik kartınızı ve uygulama ayarlarınızı en iyi oyun, içerik oluşturma ve tasarım deneyimini sağlayacak şekilde yapılandırabilmek için belirli verilere ihtiyaç duyar. Bilgisayarınızın donanım ve yazılım yapılandırmasını, yüklü oyunları ve yaratıcı/tasarım uygulamalarını, oyun ve uygulama ayarlarını ve performans verilerini, NVIDIA App’in kullanım ölçümlerini ve coğrafi bölgeyi bilmemiz gerekir. 
+
+Bu verileri uygulama ayarlarınızı optimize etmek, yazılım ve içerik güncellemeleri sunmak, uygulama özelliklerini geliştirmek, ücretsiz oyunlar için kodları kullanmak ve yerel gizlilik yasalarına uymak için kullanırız.
+
+Gizlilik ilkesi yazımızda, hangi verileri topladığımız ve bu verilerle ne yaptığımız açıklanmıştır.  Gizlilik seçeneklerini NVIDIA App Ayarlar menüsünden yapılandırabilirsiniz.

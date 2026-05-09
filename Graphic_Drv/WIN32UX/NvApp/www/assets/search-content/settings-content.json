@@ -1,0 +1,135 @@
+{
+  "pageName": "settings",
+  "pageTitle": "toolbar.settings",
+  "tabs": [
+    {
+      "tabName": "features",
+      "text": "preferences.featureReadiness.title"
+    },
+    {
+      "tabName": "notifications",
+      "text": "preferences.notifications.title"
+    },
+    {
+      "tabName": "about",
+      "text": "preferences.about.title"
+    }
+  ],
+  "content": {
+    "strings": []
+  },
+  "features": {
+    "content": {
+      "strings": [
+        {
+          "text": "layout.features.overlay.title"
+        },
+        {
+          "text": "preferences.gameScan.gamesAppsAddedWithoutCount"
+        },
+        {
+          "text": "preferences.gameScan.scanNow"
+        },
+        {
+          "text": "preferences.gameScan.scanLocations"
+        },
+        {
+          "text": "drivers.title"
+        },
+        {
+          "text": "preferences.autoDownloadDrivers"
+        },
+        {
+          "text": "preferences.gameScan.autoOptimize"
+        },
+        {
+          "text": "preferences.featureReadiness.languageFeature.header"
+        },
+        {
+          "text": "preferences.featureReadiness.languageFeature.description"
+        },
+        {
+          "text": "preferences.gameScan.supportedGamesLink"
+        },
+        {
+          "text": "preferences.featureReadiness.systemRequirementLink"
+        }
+      ]
+    }
+  },
+  "notifications": {
+    "content": {
+      "strings": [
+        {
+          "text": "preferences.notifications.driver.control"
+        },
+        {
+          "text": "preferences.notifications.rewards.control"
+        },
+        {
+          "text": "preferences.notifications.windowsNotificationLink"
+        }
+      ]
+    }
+  },
+  "about": {
+    "content": {
+      "strings": [
+        {
+          "text": "preferences.about.privacy.requiredConsent.header"
+        },
+        {
+          "text": "preferences.about.privacy.requiredConsent.description"
+        },
+        {
+          "text": "preferences.about.privacy.functionalConsent.header"
+        },
+        {
+          "text": "preferences.about.privacy.functionalConsent.description"
+        },
+        {
+          "text": "preferences.about.privacyPortal"
+        },
+        {
+          "text": "preferences.about.privacyPolicy"
+        },
+        {
+          "text": "preferences.about.betaTitle"
+        },
+        {
+          "text": "preferences.about.betaDescription"
+        },
+        {
+          "text": "preferences.about.privacy.requiredConsent.header"
+        },
+        {
+          "text": "preferences.about.privacy.requiredConsent.description"
+        },
+        {
+          "text": "preferences.about.privacy.functionalConsent.header"
+        },
+        {
+          "text": "preferences.about.privacy.functionalConsent.description"
+        },
+        {
+          "text": "preferences.about.privacy.technicalConsent.header"
+        },
+        {
+          "text": "preferences.about.privacy.technicalConsent.description"
+        },
+        {
+          "text": "preferences.about.releaseHighlights"
+        },
+        {
+          "text": "settings.licenseAgreement"
+        },
+        {
+          "text": "preferences.about.accountTerms"
+        },
+        {
+          "text": "preferences.about.osslicense"
+        }
+      ]
+    }
+  }
+}

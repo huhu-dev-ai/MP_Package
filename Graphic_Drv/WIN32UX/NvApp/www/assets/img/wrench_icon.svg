@@ -1,0 +1,14 @@
+<!--
+Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved.
+
+NVIDIA CORPORATION and its licensors retain all intellectual property
+and proprietary rights in and to this software, related documentation
+and any modifications thereto.  Any use, reproduction, disclosure or
+distribution of this software and related documentation without an express
+license agreement from NVIDIA CORPORATION is strictly prohibited.
+-->
+
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M15.9304 6.86356C13.9491 4.88824 10.9821 4.48532 8.59667 5.64496L12.8747 9.91007L9.91753 12.8583L5.63952 8.59319C4.48623 10.9813 4.89037 13.9197 6.87166 15.895C8.7051 17.7229 11.3862 18.2044 13.6633 17.3494L23.343 27L27 23.354L17.3597 13.7329C18.2665 11.4333 17.7934 8.72095 15.9304 6.86356Z" />
+</svg>

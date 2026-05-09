@@ -1,0 +1,30 @@
+<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.5 4.5H4.5V5.5H5.5V4.5Z"/>
+<path d="M7.5 4.5H6.5V5.5H7.5V4.5Z"/>
+<path d="M9.5 4.5H8.5V5.5H9.5V4.5Z"/>
+<path d="M11.5 4.5H10.5V5.5H11.5V4.5Z"/>
+<path d="M13.5 4.5H12.5V5.5H13.5V4.5Z"/>
+<path d="M15.5 4.5H14.5V5.5H15.5V4.5Z"/>
+<path d="M5.5 6.5H4.5V7.5H5.5V6.5Z"/>
+<path d="M7.5 6.5H6.5V7.5H7.5V6.5Z"/>
+<path d="M9.5 6.5H8.5V7.5H9.5V6.5Z"/>
+<path d="M11.5 6.5H10.5V7.5H11.5V6.5Z"/>
+<path d="M13.5 6.5H12.5V7.5H13.5V6.5Z"/>
+<path d="M15.5 6.5H14.5V7.5H15.5V6.5Z"/>
+<path d="M5.5 8.5H4.5V9.5H5.5V8.5Z"/>
+<path d="M7.5 8.5H6.5V9.5H7.5V8.5Z"/>
+<path d="M9.5 8.5H8.5V9.5H9.5V8.5Z"/>
+<path d="M11.5 8.5H10.5V9.5H11.5V8.5Z"/>
+<path d="M5.5 10.5H4.5V11.5H5.5V10.5Z"/>
+<path d="M7.5 10.5H6.5V11.5H7.5V10.5Z"/>
+<path d="M9.5 10.5H8.5V11.5H9.5V10.5Z"/>
+<path d="M11.5 10.5H10.5V11.5H11.5V10.5Z"/>
+<path d="M5.5 12.5H4.5V13.5H5.5V12.5Z"/>
+<path d="M7.5 12.5H6.5V13.5H7.5V12.5Z"/>
+<path d="M9.5 12.5H8.5V13.5H9.5V12.5Z"/>
+<path d="M5.5 14.5H4.5V15.5H5.5V14.5Z"/>
+<path d="M7.5 14.5H6.5V15.5H7.5V14.5Z"/>
+<path d="M9.5 14.5H8.5V15.5H9.5V14.5Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 9.45H16.05L15.2 10.85L14.3 12.3H16.1L12.65 16.85L13.75 14.65L14.45 13.25H12.55L14.5 9.45ZM13.9 8.5L11 14.2H12.9L11 18H12.95L18 11.35H16L17.8 8.5H13.95H13.9Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 2V18H9.5V17H3V3H17V7.5H18V2H2Z"/>
+</svg>

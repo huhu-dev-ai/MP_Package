@@ -1,0 +1,15 @@
+<!--
+Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved.
+
+NVIDIA CORPORATION and its licensors retain all intellectual property
+and proprietary rights in and to this software, related documentation
+and any modifications thereto.  Any use, reproduction, disclosure or
+distribution of this software and related documentation without an express
+license agreement from NVIDIA CORPORATION is strictly prohibited.
+-->
+
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M9.62 8.68358L15.0512 5.54818C14.8258 4.33346 15.3707 3.05537 16.5016 2.40242C17.9365 1.574 19.7713 2.06562 20.5997 3.5005C21.4282 4.93538 20.9365 6.77015 19.5016 7.59858C18.3704 8.2517 16.9906 8.08433 16.0513 7.28111L10.6209 10.4167C10.5161 10.104 10.3787 9.79714 10.2074 9.5005C10.036 9.20355 9.83868 8.93085 9.62 8.68358ZM17 9.89998L17 16.1707C15.8348 16.5825 15 17.6938 15 19C15 20.6569 16.3431 22 18 22C19.6569 22 21 20.6569 21 19C21 17.6938 20.1652 16.5825 19 16.1707L19 9.89998C18.6769 9.96557 18.3425 10 18 10C17.6575 10 17.3231 9.96557 17 9.89998ZM7.95002 14.2818L13.381 17.4177C13.4858 17.1047 13.6233 16.7974 13.7947 16.5005C13.966 16.2039 14.1631 15.9314 14.3815 15.6843L8.95072 12.5492C9.1767 11.3342 8.63175 10.0556 7.5005 9.40242C6.06562 8.574 4.23085 9.06562 3.40242 10.5005C2.574 11.9354 3.06562 13.7702 4.5005 14.5986C5.63143 15.2515 7.01077 15.0844 7.95002 14.2818Z"
+        fill="currentColor" />
+</svg>
